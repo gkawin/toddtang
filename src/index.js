@@ -6,8 +6,6 @@ import * as firebase from 'firebase'
 
 import App from './App.jsx'
 
-console.log(process.env)
-
 const config = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,

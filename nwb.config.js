@@ -9,12 +9,6 @@ module.exports = {
     },
     extra: {
       resolve: { extensions: ['', '.js', '.jsx', '.json'] },
-      node: {
-        console: true,
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty'
-      },
       plugins: [
         new DotEnv({ path: '.env' })
       ]
