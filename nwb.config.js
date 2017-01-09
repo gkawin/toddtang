@@ -8,7 +8,6 @@ module.exports = {
       babel: { test: /\.jsx?/ }
     },
     extra: {
-      resolve: { extensions: ['', '.js', '.jsx', '.json'] },
       plugins: [
         new DotEnv({ path: '.env' })
       ]
