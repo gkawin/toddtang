@@ -14,8 +14,8 @@ const config = {
   messagingSenderId: process.env.SENDER_ID
 }
 firebase.initializeApp(config)
-const appStorage = firebase.storage()
-const appDatabase = firebase.database()
-const appAuth = firebase.auth()
+// const appStorage = firebase.storage()
+// const appDatabase = firebase.database()
+// const appAuth = firebase.auth()
 
-render(<App/>, document.querySelector('#app'))
+render(<App />, document.querySelector('#app'))
