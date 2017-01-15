@@ -1,6 +1,8 @@
 const nib = require('nib')
 const DotEnv = require('dotenv-webpack')
-module.exports = {
+
+const isTest = process.NODE_ENV === 'test'
+const config = {
   type: 'react-app',
   webpack: {
     loaders: {
@@ -17,3 +19,11 @@ module.exports = {
     }
   }
 }
+
+if (isTest) {
+  config.karma = {
+    testContext: './test/index.js'
+  }
+}
+
+module.exports = config

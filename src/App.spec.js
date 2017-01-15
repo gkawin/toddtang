@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
-import App from 'src/App'
+import App from './App.jsx'
 
 describe('App component', () => {
   let node
@@ -16,7 +16,7 @@ describe('App component', () => {
   })
 
   it('displays a welcome message', () => {
-    render(<App/>, node, () => {
+    render(<App />, node, () => {
       expect(node.textContent).toContain('Welcome to React')
     })
   })
