@@ -5,6 +5,11 @@ const isTest = process.NODE_ENV === 'test'
 const config = {
   type: 'react-app',
   webpack: {
+    html: {
+      template: './template/index.html',
+      chuck: [ 'app' ],
+      hash: true
+    },
     loaders: {
       stylus: { config: { use: [ nib() ] } },
       babel: { test: /\.jsx?/ }
