@@ -2,8 +2,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import * as firebase from 'firebase'
+import { Router, Route, browserHistory } from 'react-router'
 
 import App from './App.jsx'
+import RegisterForm from './register-form/RegisterForm.jsx'
 
 const config = {
   apiKey: process.env.API_KEY,
@@ -17,4 +19,10 @@ firebase.initializeApp(config)
 // const appDatabase = firebase.database()
 // const appAuth = firebase.auth()
 
-render(<App />, document.querySelector('#app'))
+render((
+  <Router history={browserHistory}>
+    <Route path='/' component={App} >
+      <Route path='register' component={RegisterForm} />
+    </Route>
+  </Router>
+), document.querySelector('#app'))

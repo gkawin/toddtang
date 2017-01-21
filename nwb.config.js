@@ -14,7 +14,7 @@ const config = {
       babel: { test: /\.jsx?/ }
     },
     extractText: {
-      allChunks: false
+      allChunks: true
     },
     extra: {
       plugins: [
