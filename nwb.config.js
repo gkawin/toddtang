@@ -14,6 +14,9 @@ const config = {
       stylus: { config: { use: [ nib() ] } },
       babel: { test: /\.jsx?/ }
     },
+    extractText: {
+      allChunks: false
+    },
     extra: {
       plugins: [
         new DotEnv({ path: '.env' })
