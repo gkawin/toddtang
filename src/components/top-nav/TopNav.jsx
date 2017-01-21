@@ -1,4 +1,7 @@
-import React, { PropTypes } from 'react'
+import './TopNav.styl'
+
+import React from 'react'
+import NavigationMenu from './NavigationMenu.jsx'
 
 class TopNav extends React.PureComponent {
   render () {
@@ -8,7 +11,7 @@ class TopNav extends React.PureComponent {
           Logo
         </div>
         <div className='top-nav__menu'>
-          menu bar
+          <NavigationMenu />
         </div>
       </div>
     )
