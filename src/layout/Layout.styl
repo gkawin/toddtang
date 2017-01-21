@@ -1,28 +1,35 @@
+
 .layout
+  z-index 0
   position absolute
   top 0
-  left 0
-  bottom 0
   right 0
-  z-index 0
-
-  &__top
-    position fixed
-    top 0
-    left 0
-    right 0
-    z-index 3
-
-  &__bottom
-    position fixed
-    bottom 0
-    left 0
-    right 0
-    z-index 2
+  bottom 0
+  left 0
+  display flex
+  flex-direction column
 
   &__children
+    flex 1 1
     position relative
-    top 0
-    left 0
-    right 0
+    contain strict
     z-index 1
+
+  &__bottom
+    flex none
+    position relative
+    z-index 2
+
+  &__top
+    flex none
+    position relative
+    z-index 3
+
+  &__children-contents
+    position absolute
+    -webkit-overflow-scrolling touch
+    overflow auto
+    top 0
+    right 0
+    bottom 0
+    left 0
