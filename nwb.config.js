@@ -7,8 +7,7 @@ const config = {
   webpack: {
     html: {
       template: './template/index.html',
-      chuck: [ 'app' ],
-      hash: true
+      chuck: [ 'app' ]
     },
     loaders: {
       stylus: { config: { use: [ nib() ] } },
