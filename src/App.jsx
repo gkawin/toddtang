@@ -1,9 +1,8 @@
-import './App.styl'
 
 import React from 'react'
 
-import Layout from './components/layout/Layout.jsx'
-import TopNav from './components/top-nav/TopNav.jsx'
+import Layout from './layout/Layout.jsx'
+import TopNav from './top-nav/TopNav.jsx'
 
 const App = React.createClass({
   render () {
