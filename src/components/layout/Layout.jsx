@@ -9,8 +9,10 @@ class Layout extends React.PureComponent {
         <div className='layout__top'>
           {this.props.top}
         </div>
-        <div className='layout__middle'>
-          {this.props.middle}
+        <div className='layout__children'>
+          <div className='layout__children-content'>
+            {this.props.children}
+          </div>
         </div>
         <div className='layout__bottom'>
           {this.props.bottom}
@@ -23,7 +25,7 @@ class Layout extends React.PureComponent {
 Layout.propTypes = {
   top: PropTypes.node,
   bottom: PropTypes.node,
-  middle: PropTypes.node
+  children: PropTypes.node
 }
 
 export default Layout
