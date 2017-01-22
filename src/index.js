@@ -2,7 +2,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import * as firebase from 'firebase'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 import AppLayout from './AppLayout.jsx'
 import RegisterForm from './register-form/RegisterForm.jsx'
@@ -21,7 +21,7 @@ firebase.initializeApp(config)
 // const appAuth = firebase.auth()
 
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={AppLayout} >
       <Route path='register' component={RegisterForm} />
       <Route path='*' component={NotFound} />
