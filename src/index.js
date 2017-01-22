@@ -4,8 +4,9 @@ import { render } from 'react-dom'
 import * as firebase from 'firebase'
 import { Router, Route, browserHistory } from 'react-router'
 
-import App from './App.jsx'
+import AppLayout from './AppLayout.jsx'
 import RegisterForm from './register-form/RegisterForm.jsx'
+import NotFound from './not-found/NotFound.jsx'
 
 const config = {
   apiKey: process.env.API_KEY,
@@ -21,8 +22,9 @@ firebase.initializeApp(config)
 
 render((
   <Router history={browserHistory}>
-    <Route path='/' component={App} >
+    <Route path='/' component={AppLayout} >
       <Route path='register' component={RegisterForm} />
+      <Route path='*' component={NotFound} />
     </Route>
   </Router>
 ), document.querySelector('#app'))
