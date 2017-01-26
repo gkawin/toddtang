@@ -10,7 +10,7 @@ class Layout extends React.PureComponent {
           {this.props.top}
         </div>
         <div className='layout__children'>
-          <div className='layout__children-content'>
+          <div className='layout__children-contents'>
             {this.props.children}
           </div>
         </div>
