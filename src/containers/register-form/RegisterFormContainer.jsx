@@ -1,15 +1,24 @@
 import React from 'react'
+import Validator from 'email-validator'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
 class RegisterFormContainer extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { }
+    this.state = {
+      email: null,
+      password: null,
+      name: null,
+      phone: null,
+      bank: null,
+      account_number: null
+    }
   }
 
   onSubmit = (e) => {
     e.preventDefault()
+    if (!Validator.validate(this.state.email)) return
   }
 
   handleInputChange = (e) => {
