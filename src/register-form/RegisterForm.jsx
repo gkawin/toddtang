@@ -3,10 +3,14 @@ import './RegisterForm.styl'
 import React from 'react'
 
 class RegisterForm extends React.Component {
+  static propTypes = {
+    onSubmit: React.PropTypes.func.isRequired,
+    onHandleInputChange: React.PropTypes.func.isRequired
+  }
   render () {
     return (
       <div className='register-form'>
-        <form>
+        <form onSubmit={this.props.onSubmit}>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
               <label>อีเมล์</label>
@@ -15,9 +19,11 @@ class RegisterForm extends React.Component {
               </span>
             </div>
             <input
+              name='email'
               className='register-form__form-input'
               type='email'
               placeholder='(example@toddteng.com)'
+              onChange={this.props.onHandleInputChange}
             />
           </div>
           <div className='register-form__form-row'>
@@ -28,8 +34,10 @@ class RegisterForm extends React.Component {
               </span>
             </div>
             <input
+              name='password'
               className='register-form__form-input'
               type='password'
+              onChange={this.props.onHandleInputChange}
             />
           </div>
           <span className='register-form__bank-account-label'>
@@ -40,9 +48,11 @@ class RegisterForm extends React.Component {
               <label>ชื่อ-สกุล</label>
             </div>
             <input
+              name='name'
               className='register-form__form-input'
               type='text'
               placeholder='นายมั่งมี ศรีสุข'
+              onChange={this.props.onHandleInputChange}
             />
           </div>
           <div className='register-form__form-row'>
@@ -50,16 +60,22 @@ class RegisterForm extends React.Component {
               <label>หมายเลขโทรศัพท์</label>
             </div>
             <input
+              name='phone'
               className='register-form__form-input'
               type='number'
               placeholder='0899999999'
+              onChange={this.props.onHandleInputChange}
             />
           </div>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
               <label>ธนาคาร</label>
             </div>
-            <select className='register-form__form-select'>
+            <select
+              className='register-form__form-select'
+              name='bank'
+              onChange={this.props.onHandleInputChange}
+            >
               <option value='ธนาคารกรุงเทพ'>ธนาคารกรุงเทพ</option>
               <option value='ธนาคารกสิกรไทย'>ธนาคารกสิกรไทย</option>
               <option value='ธนาคารกรุงไทย'>ธนาคารกรุงไทย</option>
@@ -81,9 +97,11 @@ class RegisterForm extends React.Component {
               <label>หมายเลขบัญชี</label>
             </div>
             <input
+              name='account_number'
               className='register-form__form-input'
               type='number'
               placeholder='8249999999'
+              onChange={this.props.onHandleInputChange}
             />
           </div>
           <div className='register-form__form-row'>
