@@ -1,8 +1,26 @@
 import React from 'react'
 import Validator from 'email-validator'
 import * as Action from '../../action'
+import { connect } from 'react-redux'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
+
+const mapStateToProps = (state) => {
+  return state
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSubmit: (input) => {
+      dispatch(Action.SubmitRegisterForm(input))
+    }
+  }
+}
+
+const enhance = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)
 
 class RegisterFormContainer extends React.Component {
   constructor (props) {
@@ -17,9 +35,14 @@ class RegisterFormContainer extends React.Component {
     }
   }
 
+  static propTypes = {
+    onSubmit: React.PropTypes.func.isRequired
+  }
+
   onSubmit = (e) => {
     e.preventDefault()
     if (!Validator.validate(this.state.email)) return
+    this.props.onSubmit(this.state)
   }
 
   handleInputChange = (e) => {
@@ -29,7 +52,6 @@ class RegisterFormContainer extends React.Component {
   }
 
   render () {
-    console.log(Action.SubmitRegisterForm())
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
@@ -39,4 +61,4 @@ class RegisterFormContainer extends React.Component {
   }
 }
 
-export default RegisterFormContainer
+export default enhance(RegisterFormContainer)
