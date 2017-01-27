@@ -5,7 +5,7 @@ import * as firebase from 'firebase'
 import { Router, Route, browserHistory } from 'react-router'
 
 import AppLayout from './AppLayout.jsx'
-import RegisterForm from './register-form/RegisterForm.jsx'
+import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
 import NotFound from './not-found/NotFound.jsx'
 
 const config = {
@@ -23,7 +23,7 @@ firebase.initializeApp(config)
 render((
   <Router history={browserHistory}>
     <Route path='/' component={AppLayout} >
-      <Route path='register' component={RegisterForm} />
+      <Route path='register' component={RegisterFormContainer} />
       <Route path='*' component={NotFound} />
     </Route>
   </Router>

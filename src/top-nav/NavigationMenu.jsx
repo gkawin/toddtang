@@ -7,7 +7,7 @@ class NavigationMenu extends React.PureComponent {
     return (
       <nav className='navigation-menu'>
         <ul className='navigation-menu__menu-list'>
-          <li>สมัครสมาชิก</li>
+          <li><a href='register'>สมัครสมาชิก</a></li>
           <li>วิธีการแทงหวย</li>
           <li>เข้าแทงหวย</li>
           <li>ติดต่อเรา</li>
