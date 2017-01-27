@@ -1,5 +1,6 @@
 import React from 'react'
 import Validator from 'email-validator'
+import * as Action from '../../action'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
@@ -28,6 +29,7 @@ class RegisterFormContainer extends React.Component {
   }
 
   render () {
+    console.log(Action.SubmitRegisterForm())
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}

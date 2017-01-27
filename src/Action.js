@@ -1,5 +1,7 @@
 import AlgebraicType from 'algebraic-type'
 
-export const Action = AlgebraicType({
+const Action = AlgebraicType({
   SubmitRegisterForm: { }
 })
+
+export default Action
