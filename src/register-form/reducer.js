@@ -1,9 +1,11 @@
 
-export default (state, action) => {
+export const initalState = { status: 'editing', error: null }
+
+export default (state = initalState, action) => {
   switch (action.type) {
-    case 'SubmitRegisterForm':
-      return 'SubmitRegisterForm' // inject into store
+    case 'RegisterRequested':
+      return { status: 'applying', error: null }
     default:
-      return 'Register form'
+      return state
   }
 }

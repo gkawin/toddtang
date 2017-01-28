@@ -6,13 +6,13 @@ import { connect } from 'react-redux'
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
 const mapStateToProps = (state) => {
-  return state
+  return state.RegisterForm
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (input) => {
-      dispatch(Action.SubmitRegisterForm(input))
+      dispatch(Action.RegisterRequested({ status: 'applying', error: null }))
     }
   }
 }
@@ -52,6 +52,7 @@ class RegisterFormContainer extends React.Component {
   }
 
   render () {
+    console.log(this.props)
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
