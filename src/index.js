@@ -3,10 +3,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import * as firebase from 'firebase'
 import { Router, Route, browserHistory } from 'react-router'
+import { Provider } from 'react-redux'
 
 import AppLayout from './AppLayout.jsx'
-import RegisterForm from './register-form/RegisterForm.jsx'
+import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
 import NotFound from './not-found/NotFound.jsx'
+import configureStore from './configureStore'
 
 const config = {
   apiKey: process.env.API_KEY,
@@ -21,10 +23,12 @@ firebase.initializeApp(config)
 // const appAuth = firebase.auth()
 
 render((
-  <Router history={browserHistory}>
-    <Route path='/' component={AppLayout} >
-      <Route path='register' component={RegisterForm} />
-      <Route path='*' component={NotFound} />
-    </Route>
-  </Router>
+  <Provider store={configureStore()}>
+    <Router history={browserHistory}>
+      <Route path='/' component={AppLayout} >
+        <Route path='register' component={RegisterFormContainer} />
+        <Route path='*' component={NotFound} />
+      </Route>
+    </Router>
+  </Provider>
 ), document.querySelector('#app'))
