@@ -1,7 +1,7 @@
 import React from 'react'
 import Validator from 'email-validator'
-import * as Action from '../../action'
 import { connect } from 'react-redux'
+import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (input) => {
-      dispatch(Action.RegisterRequested({ status: 'applying', error: null }))
+      dispatch(RegisterFormActions.onSubmitForm(input))
     }
   }
 }
