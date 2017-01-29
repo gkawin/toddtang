@@ -32,7 +32,10 @@ class RegisterFormContainer extends React.Component {
   }
 
   static propTypes = {
-    onSubmit: React.PropTypes.func.isRequired
+    onSubmit: React.PropTypes.func.isRequired,
+    firebase: React.PropTypes.shape({
+      ref: React.PropTypes.func
+    })
   }
 
   onSubmit = (e) => {
@@ -47,8 +50,13 @@ class RegisterFormContainer extends React.Component {
     this.setState({ [name]: value })
   }
 
+  test = async () => {
+    const result = await this.props.firebase.ref('/users/1').once('value')
+    console.log(result.val())
+  }
+
   render () {
-    console.log(this.props)
+    this.test()
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
