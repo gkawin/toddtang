@@ -5,21 +5,11 @@ import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
-const mapStateToProps = (state) => {
-  return state.RegisterForm
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onSubmit: (input) => {
-      dispatch(RegisterFormActions.onSubmitForm(input))
-    }
-  }
-}
-
 const enhance = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  (state) => state.RegisterForm,
+  (dispatch) => ({
+    onSubmit: (payload) => dispatch(RegisterFormActions.onSubmitForm(payload))
+  })
 )
 
 class RegisterFormContainer extends React.Component {
@@ -52,7 +42,6 @@ class RegisterFormContainer extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
