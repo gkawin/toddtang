@@ -3,7 +3,7 @@ import _ from 'lodash'
 
 import * as RegisterForm from './RegisterForm'
 
-export const registerFormSelector = (state) => state.RegisterForm
+export const registerFormSelector = (state) => state.registerForm
 
 export const getFormStatus = createSelector(
   registerFormSelector,
