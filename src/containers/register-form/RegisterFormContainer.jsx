@@ -50,13 +50,7 @@ class RegisterFormContainer extends React.Component {
     this.setState({ [name]: value })
   }
 
-  test = async () => {
-    const result = await this.props.firebase.ref('/users/1').once('value')
-    console.log(result.val())
-  }
-
   render () {
-    this.test()
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
