@@ -1,7 +1,6 @@
+import * as RegisterForm from './RegisterForm'
 
-export const initalState = { status: 'editing', error: null }
-
-export default (state = initalState, action) => {
+export default (state = RegisterForm.initialState, action) => {
   switch (action.type) {
     case 'RegisterRequested':
       return { status: 'applying', error: null }
