@@ -27,10 +27,5 @@ const config = {
   }
 }
 
-if (isTest) {
-  config.karma = {
-    testContext: './test/index.js'
-  }
-}
-
+console.log(process.NODE_ENV)
 module.exports = config
