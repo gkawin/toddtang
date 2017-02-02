@@ -1,7 +1,8 @@
 const nib = require('nib')
 const DotEnv = require('dotenv-webpack')
+const webpack = require('webpack')
 
-const isTest = process.NODE_ENV === 'test'
+const isTest = process.env.NODE_ENV === 'test'
 const config = {
   type: 'react-app',
   webpack: {
@@ -27,5 +28,17 @@ const config = {
   }
 }
 
-console.log(process.NODE_ENV)
+if (isTest) {
+  config.webpack.compat = { sinon: true }
+  config.karma = {
+    testContext: './.test/test-entry.js',
+    plugins: [
+      require('karma-chai'),
+      require('karma-spec-reporter'),
+      require('karma-sinon')
+    ],
+    frameworks: ['mocha', 'chai', 'sinon'],
+    reporters: ['spec']
+  }
+}
 module.exports = config
