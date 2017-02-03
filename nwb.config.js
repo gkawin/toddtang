@@ -1,7 +1,7 @@
 const nib = require('nib')
 const DotEnv = require('dotenv-webpack')
 
-const isTest = process.NODE_ENV === 'test'
+const isTest = process.env.NODE_ENV === 'test'
 const config = {
   type: 'react-app',
   webpack: {
@@ -29,7 +29,11 @@ const config = {
 
 if (isTest) {
   config.karma = {
-    testContext: './test/index.js'
+    testContext: './test/test-entry.js',
+    frameworks: [ 'mocha', 'chai' ],
+    plugins: [
+      require('karma-chai')
+    ]
   }
 }
 

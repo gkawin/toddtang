@@ -4,6 +4,6 @@ describe('RegisterForm', () => {
   it('should false if email is malformat', () => {
     const test = 'fooo@barr.com'
     const result = Register.validateEmail(test)
-    expect(result).to.be.equal(true)
+    expect(result).to.be.true()
   })
 })
