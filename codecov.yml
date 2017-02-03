@@ -1,0 +1,12 @@
+codecov:
+  branch: master
+  
+comment:
+  layout: header, changes, diff
+
+coverage:
+  range: "40...90"
+  ignore:
+  - .*spec\.js
+  status:
+    patch: false
