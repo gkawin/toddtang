@@ -33,7 +33,8 @@ if (isTest) {
     frameworks: [ 'mocha', 'chai' ],
     plugins: [
       require('karma-chai')
-    ]
+    ],
+    reporters: [ 'progress' ]
   }
 }
 
