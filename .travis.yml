@@ -12,7 +12,6 @@ before_install:
   - npm install codecov.io
 
 after_success:
-  - yarn test:coverage
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
 
 branches:
