@@ -9,7 +9,7 @@ cache:
     - node_modules
 
 before_install:
-  - npm install codecov.io
+  - npm install codecov.io codecov
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
