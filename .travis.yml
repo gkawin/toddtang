@@ -9,7 +9,7 @@ cache:
     - node_modules
 
 before_install:
-  - yarn codecov.io
+  - npm install codecov.io
 
 after_success:
   - yarn test:coverage
