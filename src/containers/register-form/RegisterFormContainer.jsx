@@ -1,19 +1,21 @@
 import React from 'react'
 import Validator from 'email-validator'
 import { connect } from 'react-redux'
-import { firebase } from 'react-redux-firebase'
 import { compose } from 'recompose'
 import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
 import { getFormStatus } from '../../register-form/selectors'
+import { firebase } from 'react-redux-firebase'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
 const enhance = compose(
-  firebase(),
+  firebase([
+    'users'
+  ]),
   connect(
     (state) => ({ formStatus: getFormStatus(state) }),
-    (dispatch) => ({
-      onSubmit: (payload) => dispatch(RegisterFormActions.onSubmitForm(payload))
+    (dispatch, ownProps) => ({
+      onSubmit: RegisterFormActions.onSubmitForm({ dispatch, ...ownProps })
     })
   )
 )
@@ -33,9 +35,7 @@ class RegisterFormContainer extends React.Component {
 
   static propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
-    firebase: React.PropTypes.shape({
-      ref: React.PropTypes.func
-    })
+    firebase: React.PropTypes.object
   }
 
   onSubmit = (e) => {
