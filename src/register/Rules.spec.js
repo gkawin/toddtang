@@ -29,4 +29,18 @@ describe('Register rules', () => {
       })
     })
   })
+
+  describe('minimun allow length', () => {
+    it('should be nothing if input equal or more than 6 charactors', () => {
+      const text = 'Nana was killed by whom?'
+      const minLength = Rules.minLength(6)
+      expect(minLength(text)).to.be.null()
+    })
+
+    it('should return error message if text less than 10 charactors', () => {
+      const text = 'todd'
+      const minLength = Rules.minLength(10)
+      expect(minLength(text)).to.be.exist()
+    })
+  })
 })
