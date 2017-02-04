@@ -1,5 +1,4 @@
 import EmailValidator from 'email-validator'
-import invart from 'invariant'
 
 export const ErrorMessages = {
   required: () => 'กรุณากรอกฟิลด์นี้',
@@ -14,7 +13,6 @@ export const emailFormat = (email: String) => EmailValidator.validate(email) ? n
 )
 
 export const minLength = (length: Number) => (text: String) => {
-  invart(length, 'Please define a length for compartion')
   return (text.length >= length) ? null : (
     ErrorMessages.minLength(minLength)
   )
