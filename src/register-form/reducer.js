@@ -1,6 +1,5 @@
-import * as RegisterForm from './RegisterForm'
 
-export default (state = RegisterForm.initialState, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case 'RegisterRequested':
       return { status: 'applying', error: null }
