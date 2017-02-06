@@ -11,6 +11,10 @@ cache:
 before_install:
   - npm install codecov
 
+script:
+  - yarn test
+  - yarn lint
+
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 
