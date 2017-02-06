@@ -7,7 +7,6 @@ export const validate = (inputState: Object, ruleRunners: Array) => _.reduce(rul
 
 export const ruleRunner = (field: String, fieldName: String, validations: Array) => {
   return function (inputState: Object) {
-    console.log(inputState)
     for (let fnRule of validations) {
       const fnErr = fnRule(inputState[field])
       if (fnErr) return { [field]: fnErr(fieldName) }
