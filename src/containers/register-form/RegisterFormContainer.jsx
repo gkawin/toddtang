@@ -5,12 +5,15 @@ import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
 import { getFormStatus } from '../../register-form/selectors'
 import { firebase } from 'react-redux-firebase'
 import * as RegisterValidation from '../../register/RegisterValidation'
-import { required, minLength } from '../../register/RegisterRules'
+import { required, minLength, emailFormat } from '../../register/RegisterRules'
 
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
 const fieldValidations = [
-  RegisterValidation.ruleRunner('email', 'อีเมล์', [ minLength(20) ]),
+  RegisterValidation.ruleRunner('email', 'อีเมล์', [ emailFormat ]),
+  RegisterValidation.ruleRunner('password', 'รหัสผ่าน', [ required, minLength(6) ]),
+  RegisterValidation.ruleRunner('name', 'ชื่อ-สกุล', [ required ]),
+  RegisterValidation.ruleRunner('account_number', 'เลขบัญชีธนาคาร', [ minLength(10) ]),
   RegisterValidation.ruleRunner('phone', 'เบอร์โทรศัพท์', [ minLength(10) ])
 ]
 
@@ -36,7 +39,6 @@ class RegisterFormContainer extends React.Component {
       phone: null,
       bank: null,
       account_number: null,
-      showError: false,
       validationError: { }
     }
   }
@@ -58,11 +60,11 @@ class RegisterFormContainer extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
         onSubmit={this.onSubmit}
+        validationError={this.state.validationError}
       />
     )
   }
