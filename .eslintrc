@@ -1,5 +1,6 @@
 {
-  "extends": ["standard", "standard-react"],
+  "extends": [ "eslint:recommended", "standard", "standard-react" ],
+  "plugins": [ "import" ],
   "parser": "babel-eslint",
   "env": {
     "node": true,
@@ -12,6 +13,9 @@
   },
   "rules": {
     "no-console": "warn",
-    "no-undef": "error"
+    "no-undef": "error",
+
+    "import/named": "error",
+    "import/namespace": "error"
   }
 }
