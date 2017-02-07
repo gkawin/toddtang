@@ -1,3 +1,4 @@
+/* eslint import/named: off */
 import { combineReducers } from 'redux'
 import { firebaseStateReducer as firebase } from 'react-redux-firebase'
 
