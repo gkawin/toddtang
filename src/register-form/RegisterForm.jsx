@@ -5,8 +5,10 @@ import React from 'react'
 class RegisterForm extends React.Component {
   static propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
-    onHandleInputChange: React.PropTypes.func.isRequired
+    onHandleInputChange: React.PropTypes.func.isRequired,
+    validationError: React.PropTypes.object
   }
+
   render () {
     return (
       <div className='register-form'>

@@ -1,10 +1,11 @@
+/* eslint import/named: off */
 import { createStore, compose } from 'redux'
-import { reduxFirebase } from 'react-redux-firebase'
+import { reactReduxFirebase } from 'react-redux-firebase'
 import * as Config from './config'
 
 export default function configureStore () {
   const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f
-  const firebase = reduxFirebase(Config.firebase, { userProfile: 'users' })
+  const firebase = reactReduxFirebase(Config.firebase, { userProfile: 'users' })
   const enhance = compose(
     devTools,
     firebase

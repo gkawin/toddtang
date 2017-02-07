@@ -4,4 +4,6 @@ const Action = AlgebraicType({
   RegisterRequested: { status: String }
 })
 
-export default Action
+export const {
+  RegisterRequested
+} = Action
