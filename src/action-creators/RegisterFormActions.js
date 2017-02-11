@@ -1,4 +1,4 @@
-import * as Action from '../action'
+import Action from '../Action'
 import uuid from 'uuid'
 
 export const onSubmitForm = ({ dispatch, firebase }) => {
