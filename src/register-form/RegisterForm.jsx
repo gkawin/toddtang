@@ -1,12 +1,18 @@
 import './RegisterForm.styl'
 
 import React from 'react'
+import _ from 'lodash'
 
-class RegisterForm extends React.Component {
+class RegisterForm extends React.PureComponent {
   static propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
     onHandleInputChange: React.PropTypes.func.isRequired,
-    validationError: React.PropTypes.object
+    errors: React.PropTypes.object
+  }
+
+  renderValidationError (name) {
+    return _.map(this.props.errors, (val, key) => (key !== name) ? null
+      : (<span key={key} className='register-form__validation-error'>{val}</span>))
   }
 
   render () {
@@ -27,6 +33,7 @@ class RegisterForm extends React.Component {
               placeholder='(example@toddteng.com)'
               onChange={this.props.onHandleInputChange}
             />
+            {this.renderValidationError('email')}
           </div>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
@@ -41,6 +48,7 @@ class RegisterForm extends React.Component {
               type='password'
               onChange={this.props.onHandleInputChange}
             />
+            {this.renderValidationError('password')}
           </div>
           <span className='register-form__bank-account-label'>
             ข้อมูลการติดต่อและบัญชีธนาคารที่ต้องการให้โอนเงิน
@@ -56,6 +64,7 @@ class RegisterForm extends React.Component {
               placeholder='นายมั่งมี ศรีสุข'
               onChange={this.props.onHandleInputChange}
             />
+            {this.renderValidationError('name')}
           </div>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
@@ -68,6 +77,7 @@ class RegisterForm extends React.Component {
               placeholder='0899999999'
               onChange={this.props.onHandleInputChange}
             />
+            {this.renderValidationError('phone')}
           </div>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
@@ -78,6 +88,7 @@ class RegisterForm extends React.Component {
               name='bank'
               onChange={this.props.onHandleInputChange}
             >
+              <option value='' defaultValue=''>โปรดเลือก</option>
               <option value='ธนาคารกรุงเทพ'>ธนาคารกรุงเทพ</option>
               <option value='ธนาคารกสิกรไทย'>ธนาคารกสิกรไทย</option>
               <option value='ธนาคารกรุงไทย'>ธนาคารกรุงไทย</option>
@@ -93,6 +104,7 @@ class RegisterForm extends React.Component {
               <option value='ธนาคารอาคารสงเคราะห์'>ธนาคารอาคารสงเคราะห์</option>
               <option value='ธนาคารอิสลามแห่งประเทศไทย'>ธนาคารอิสลามแห่งประเทศไทย</option>
             </select>
+            {this.renderValidationError('bank')}
           </div>
           <div className='register-form__form-row'>
             <div className='register-form__label'>
@@ -105,6 +117,7 @@ class RegisterForm extends React.Component {
               placeholder='8249999999'
               onChange={this.props.onHandleInputChange}
             />
+            {this.renderValidationError('account_number')}
           </div>
           <div className='register-form__form-row'>
             <button type='submit' className='register-form__button'>

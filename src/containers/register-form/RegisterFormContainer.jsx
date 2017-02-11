@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
+
 import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
 import { getFormStatus } from '../../register-form/selectors'
-import { firebase } from 'react-redux-firebase'
+import ReduxFirebase from 'react-redux-firebase'
 import * as RegisterValidation from '../../register/RegisterValidation'
 import { required, minLength, emailFormat } from '../../register/RegisterRules'
 
@@ -14,11 +15,12 @@ const fieldValidations = [
   RegisterValidation.ruleRunner('password', 'รหัสผ่าน', [ required, minLength(6) ]),
   RegisterValidation.ruleRunner('name', 'ชื่อ-สกุล', [ required ]),
   RegisterValidation.ruleRunner('account_number', 'เลขบัญชีธนาคาร', [ minLength(10) ]),
+  RegisterValidation.ruleRunner('bank', 'ธนาคาร', [ required ]),
   RegisterValidation.ruleRunner('phone', 'เบอร์โทรศัพท์', [ minLength(10) ])
 ]
 
 const enhance = compose(
-  firebase([
+  ReduxFirebase.firebase([
     'users'
   ]),
   connect(
@@ -64,7 +66,7 @@ class RegisterFormContainer extends React.Component {
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
         onSubmit={this.onSubmit}
-        validationError={this.state.validationError}
+        errors={this.state.validationError}
       />
     )
   }
