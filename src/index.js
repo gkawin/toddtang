@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 
 import AppLayout from './AppLayout.jsx'
 import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
+import LoginFormContainer from './containers/login-form/LoginFormContainer.jsx'
 import NotFound from './not-found/NotFound.jsx'
 import configureStore from './configureStore'
 
@@ -14,6 +15,7 @@ render((
     <Router history={browserHistory}>
       <Route path='/' component={AppLayout} >
         <Route path='register' component={RegisterFormContainer} />
+        <Route path='login' component={LoginFormContainer} />
         <Route path='*' component={NotFound} />
       </Route>
     </Router>

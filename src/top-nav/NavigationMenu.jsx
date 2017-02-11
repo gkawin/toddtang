@@ -10,7 +10,7 @@ class NavigationMenu extends React.PureComponent {
         <ul className='navigation-menu__menu-list'>
           <li><Link href='register'>สมัครสมาชิก</Link></li>
           <li>วิธีการแทงหวย</li>
-          <li>เข้าแทงหวย</li>
+          <li><Link href='login'>เข้าแทงหวย</Link></li>
           <li>ติดต่อเรา</li>
         </ul>
       </nav>
