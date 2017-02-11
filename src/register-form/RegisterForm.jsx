@@ -11,8 +11,12 @@ class RegisterForm extends React.PureComponent {
   }
 
   renderValidationError (name) {
-    return _.map(this.props.errors, (val, key) => (key !== name) ? null
-      : (<span key={key} className='register-form__validation-error'>{val}</span>))
+    return _(this.props.errors)
+      .map((val, key) => (key !== name)
+        ? false
+        : (<span key={key} className='register-form__validation-error'>{val}</span>))
+      .compact()
+      .value()
   }
 
   render () {
