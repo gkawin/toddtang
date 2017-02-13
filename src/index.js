@@ -16,8 +16,11 @@ render((
       <Route path='/' component={AppLayout} >
         <Route path='register' component={RegisterFormContainer} />
         <Route path='login' component={LoginFormContainer} />
-        <Route path='*' component={NotFound} />
       </Route>
+      <Route path='/u-:username'>
+        <Route path='settings' component={AppLayout} />
+      </Route>
+      <Route path='*' component={NotFound} />
     </Router>
   </Provider>
 ), document.querySelector('#app'))
