@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from './layout/Layout.jsx'
-import TopNav from './top-nav/TopNav.jsx'
+import Layout from './Layout.jsx'
+import TopNav from '../top-nav/TopNav.jsx'
 
 class AppLayout extends React.Component {
   render () {
