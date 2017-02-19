@@ -11,7 +11,6 @@ import { required, minLength, emailFormat } from '../../register/RegisterRules'
 import RegisterForm from '../../register-form/RegisterForm.jsx'
 
 const fieldValidations = [
-  RegisterValidation.ruleRunner('email', 'อีเมล์', [ emailFormat ]),
   RegisterValidation.ruleRunner('password', 'รหัสผ่าน', [ required, minLength(6) ]),
   RegisterValidation.ruleRunner('name', 'ชื่อ-สกุล', [ required ]),
   RegisterValidation.ruleRunner('account_number', 'เลขบัญชีธนาคาร', [ minLength(10) ]),
@@ -61,10 +60,18 @@ class RegisterFormContainer extends React.Component {
     this.setState({ [name]: value })
   }
 
+  onBlurValidate = (e) => {
+    e.preventDefault()
+    const onBlurValidates = [ RegisterValidation.ruleRunner('email', 'อีเมล์', [ emailFormat ]) ]
+    const validationError = RegisterValidation.validate(this.state, onBlurValidates)
+    this.setState({ validationError })
+  }
+
   render () {
     return (
       <RegisterForm
         onHandleInputChange={this.handleInputChange}
+        onBlurValidate={this.onBlurValidate}
         onSubmit={this.onSubmit}
         errors={this.state.validationError}
       />

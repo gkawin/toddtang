@@ -13,7 +13,7 @@ before_install:
   - npm install codecov
 
 script:
-  - yarn test
+  - yarn test:coverage
   - yarn lint
 
 after_success:
