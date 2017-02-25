@@ -8,7 +8,7 @@ import AppLayout from './layout/AppLayout.jsx'
 import UserLayout from './layout/UserLayout.jsx'
 import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
 import LoginFormContainer from './containers/login-form/LoginFormContainer.jsx'
-import MemberPageContainer from './containers/member-page/MemberPageContainer.jsx'
+import MemberPageContainer from './containers/member-pages/MemberPagesContainer.jsx'
 
 import NotFound from './not-found/NotFound.jsx'
 

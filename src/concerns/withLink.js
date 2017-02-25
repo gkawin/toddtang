@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 function withLink () {
   return (BaseComponent) => class withLinkContainer extends React.PureComponent {
