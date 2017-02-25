@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from './Layout.jsx'
 
-class UserLayout extends React.Component {
+class MemberLayout extends React.Component {
   render () {
     return (
       <Layout>
@@ -14,8 +14,8 @@ class UserLayout extends React.Component {
   }
 }
 
-UserLayout.propTypes = {
+MemberLayout.propTypes = {
   children: React.PropTypes.node
 }
 
-export default UserLayout
+export default MemberLayout

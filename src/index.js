@@ -5,7 +5,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 
 import AppLayout from './layout/AppLayout.jsx'
-import UserLayout from './layout/UserLayout.jsx'
+import MemberLayout from './layout/MemberLayout.jsx'
 import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
 import LoginFormContainer from './containers/login-form/LoginFormContainer.jsx'
 import MemberPageContainer from './containers/member-pages/MemberPagesContainer.jsx'
@@ -21,7 +21,7 @@ render((
         <Route path='register' component={RegisterFormContainer} />
         <Route path='login' component={LoginFormContainer} />
       </Route>
-      <Route path='/user/:username' component={UserLayout}>
+      <Route path='/member/:username' component={MemberLayout}>
         <IndexRoute component={MemberPageContainer} />
       </Route>
       <Route path='*' component={NotFound} />
