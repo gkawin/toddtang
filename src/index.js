@@ -20,7 +20,7 @@ render((
         <Route path='register' component={RegisterFormContainer} />
         <Route path='login' component={LoginFormContainer} />
       </Route>
-      <Route path='/u-:username' component={UserLayout}>
+      <Route path='/user/:username' component={UserLayout}>
         <IndexRoute component={UserMenu} />
       </Route>
       <Route path='*' component={NotFound} />
