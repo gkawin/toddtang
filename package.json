@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production nwb build-react-app && yarn deploy",
     "deploy": "firebase deploy",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
+    "dev": "NODE_ENV=development nwb serve-react-app",
     "test": "NODE_ENV=testing nwb test",
     "test:coverage": "NODE_ENV=testing nwb test-react --coverage",
     "test:watch": "NODE_ENV=testing nwb test-react --server",
@@ -27,7 +27,8 @@
     "react-router": "^3.0.2",
     "recompose": "^0.22.0",
     "redux": "^3.6.0",
-    "reselect": "^2.5.4"
+    "reselect": "^2.5.4",
+    "updeep": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",

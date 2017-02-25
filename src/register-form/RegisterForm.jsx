@@ -7,7 +7,8 @@ class RegisterForm extends React.PureComponent {
   static propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
     onHandleInputChange: React.PropTypes.func.isRequired,
-    errors: React.PropTypes.object
+    errors: React.PropTypes.object,
+    onBlurValidate: React.PropTypes.func
   }
 
   renderValidationError (name) {
@@ -36,6 +37,7 @@ class RegisterForm extends React.PureComponent {
               type='email'
               placeholder='(example@toddteng.com)'
               onChange={this.props.onHandleInputChange}
+              onBlur={this.props.onBlurValidate}
             />
             {this.renderValidationError('email')}
           </div>
