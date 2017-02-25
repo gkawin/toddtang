@@ -1,11 +1,14 @@
 import React from 'react'
 
 import Layout from './Layout.jsx'
+import MemberTopNav from '../member-pages/MemberTopNav.jsx'
 
 class MemberLayout extends React.Component {
   render () {
     return (
-      <Layout>
+      <Layout
+        top={(<MemberTopNav />)}
+      >
         <div className='user-layout'>
           {this.props.children}
         </div>
