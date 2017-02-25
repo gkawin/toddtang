@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 
-import MemberPage from '../../member-page/MemberPage.jsx'
+import MemberPages from '../../member-pages/MemberPages.jsx'
 
 class MemberPageContainer extends React.Component {
   render () {
-    return (<MemberPage />)
+    return (<MemberPages />)
   }
 }
 
