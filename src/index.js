@@ -8,8 +8,9 @@ import AppLayout from './layout/AppLayout.jsx'
 import UserLayout from './layout/UserLayout.jsx'
 import RegisterFormContainer from './containers/register-form/RegisterFormContainer.jsx'
 import LoginFormContainer from './containers/login-form/LoginFormContainer.jsx'
+import MemberPageContainer from './containers/member-page/MemberPageContainer.jsx'
+
 import NotFound from './not-found/NotFound.jsx'
-import UserMenu from './user-menu/UserMenu.jsx'
 
 import configureStore from './configureStore'
 
@@ -21,7 +22,7 @@ render((
         <Route path='login' component={LoginFormContainer} />
       </Route>
       <Route path='/user/:username' component={UserLayout}>
-        <IndexRoute component={UserMenu} />
+        <IndexRoute component={MemberPageContainer} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

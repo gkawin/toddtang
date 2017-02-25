@@ -1,4 +1,4 @@
-import './UserMenu.styl'
+import './MemberMenu.styl'
 
 import React from 'react'
 import { Link } from 'react-router'
@@ -7,8 +7,8 @@ class UserMenu extends React.Component {
   render () {
     const pathname = (routeTo) => (location) => `${location.pathname}/${routeTo}`
     return (
-      <div className='user-menu'>
-        <div className='user-menu__menu-items'>
+      <div className='member-menu'>
+        <div className='member-menu__items'>
           <ul>
             <li><Link to={pathname('bet')}>แทงหวย</Link></li>
             <li><Link to={pathname('betlist')}>ดูโพย</Link></li>
