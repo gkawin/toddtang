@@ -5,7 +5,7 @@ node_js:
   - 6
 
 cache:
-  cache: yarn
+  yarn: true
   directories:
     - node_modules
 
