@@ -1,3 +1,28 @@
 @require '../design/colors'
+
+avatar-width = 44px
+avatar-height = 44px
 .member-top-nav
-  background-color: teal-400
+  background-color teal-400
+  height 44px
+  display flex
+  justify-content space-between
+
+  &__avatar
+    max-width avatar-width
+    max-height avatar-height
+    width avatar-width
+    height avatar-height
+
+  &__searchable
+    height 44px
+    margin-top 4px
+
+  &__searchable input[type='text']
+    height 30px
+    border 0
+    border-radius 5px
+    width 230px
+    background-color blue-900
+    padding 2px
+    color white
