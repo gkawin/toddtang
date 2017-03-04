@@ -9,10 +9,7 @@ export default class MemberTopNavMenu extends React.Component {
   render () {
     return (
       <section className='member-top-nav'>
-        <div className='member-top-nav__container'>
-          <div className='member-top-nav__searchable'>
-            <input type='text' />
-          </div>
+        <div className='member-top-nav__left'>
           <div className='member-top-nav__menu'>
             <ul>
               <li><Link to={geturl('bet')}>แทงหวย</Link></li>
@@ -22,9 +19,13 @@ export default class MemberTopNavMenu extends React.Component {
               <li><Link to={geturl('deposit')}>เลขชุดที่ชอบ</Link></li>
             </ul>
           </div>
-          <img
-            className='member-top-nav__avatar' src='https://tw-react-prod.s3.amazonaws.com/6728f75a-ed8b-4d23-84ac-9d62ad583212.png' />
         </div>
+        <div className='member-top-nav__right'>
+          <img
+            className='member-top-nav__avatar' src='https://tw-react-prod.s3.amazonaws.com/6728f75a-ed8b-4d23-84ac-9d62ad583212.png'
+          />
+        </div>
+
       </section>
     )
   }
