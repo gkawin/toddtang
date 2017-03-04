@@ -1,15 +1,15 @@
-import './MemberLeftMenu.styl'
+import './MemberLeftNav.styl'
 
 import React from 'react'
 import { Link } from 'react-router'
 
-class UserMenu extends React.Component {
+class MemberLeftNav extends React.Component {
   render () {
     const pathname = (routeTo) => (location) => `${location.pathname}/${routeTo}`
     return (
-      <section className='member-left-menu'>
-        <div className='member-left-menu__container'>
-          <div className='member-left-menu__items'>
+      <section className='member-left-nav'>
+        <div className='member-left-nav__container'>
+          <div className='member-left-nav__items'>
             <ul>
               <li><Link to={pathname('bet')}>แทงหวย</Link></li>
               <li><Link to={pathname('betlist')}>ดูโพย</Link></li>
@@ -24,4 +24,4 @@ class UserMenu extends React.Component {
   }
 }
 
-export default UserMenu
+export default MemberLeftNav
