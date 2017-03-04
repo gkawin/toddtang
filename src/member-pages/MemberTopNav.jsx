@@ -1,23 +1,17 @@
 import './MemberTopNav.styl'
 
-import React from 'react'
-import { Link } from 'react-router'
+import React, { PropTypes } from 'react'
 
-import { geturl } from '../route/Route'
+import MemberTopNavMenu from './MemberTopNavMenu.jsx'
 
-export default class MemberTopNavMenu extends React.Component {
+export default class MemberTopNav extends React.Component {
+
   render () {
     return (
       <section className='member-top-nav'>
         <div className='member-top-nav__left'>
           <div className='member-top-nav__menu'>
-            <ul>
-              <li><Link to={geturl('bet')}>แทงหวย</Link></li>
-              <li><Link to={geturl('betlist')}>ดูโพย</Link></li>
-              <li><Link to={geturl('check')}>ตรวจผลรางวัล</Link></li>
-              <li><Link to={geturl('deposit')}>ฝาก-ถอน</Link></li>
-              <li><Link to={geturl('deposit')}>เลขชุดที่ชอบ</Link></li>
-            </ul>
+            <MemberTopNavMenu menus={this.props.menus} />
           </div>
         </div>
         <div className='member-top-nav__right'>
@@ -31,5 +25,6 @@ export default class MemberTopNavMenu extends React.Component {
   }
 }
 
-MemberTopNavMenu.propTypes = {
+MemberTopNav.propTypes = {
+  menus: PropTypes.array.isRequired
 }
