@@ -1,16 +1,17 @@
 @require '../design/colors'
 
 .member-top-nav-menu
-  height 45px
-  position relative
+  height 100%
+  display flex
+
   &__item
     text-align center
-    width 100px
+    width 150px
     cursor pointer
-    display inline-block
+    box-sizing border-box
+    color white
     &:last-child
       margin 0
 
   &__divider
-    display inline-block
-    border 1px solid grey-50
+    border 1px solid black

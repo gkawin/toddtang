@@ -12,9 +12,13 @@ const MemberTopNavMenu = (props) => {
   const menuItems = (item, key) => {
     if (item.divider) return (<div className='member-top-nav-menu__divider' />)
     return (
-      <div key={`${key}${item.target}`} className='member-top-nav-menu__item'>
-        <Link className='member-top-nav-menu__link' to={geturl(item.target)}>{item.text}</Link>
-      </div>
+      <Link
+        key={`${key}${item.target}`}
+        className='member-top-nav-menu__item'
+        to={geturl(item.target)}
+      >
+        {item.text}
+      </Link>
     )
   }
 
