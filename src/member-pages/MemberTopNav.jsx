@@ -10,9 +10,10 @@ export default class MemberTopNav extends React.Component {
     return (
       <section className='member-top-nav'>
         <div className='member-top-nav__left'>
-          <div className='member-top-nav__menu'>
-            <MemberTopNavMenu menus={this.props.menus} />
-          </div>
+          <MemberTopNavMenu
+            className='member-top-nav__menu'
+            menus={this.props.menus}
+          />
         </div>
         <div className='member-top-nav__right'>
           <img
