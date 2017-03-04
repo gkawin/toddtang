@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux'
 import { firebaseStateReducer as firebase } from 'react-redux-firebase'
 
-import registerForm from './register-form/reducer'
+import registerForm from './register/reducer'
 
 const rootReducer = combineReducers({
   firebase,

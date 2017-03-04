@@ -1,11 +1,11 @@
-import * as Link from './Link'
+import * as Route from './Route'
 
 import { given, shouldEqual } from 'circumstance'
 
-describe('Link', () => {
+describe('Route', () => {
   const initalState = { pathname: '/foo' }
   it('should return target with pathname', () => {
     given(initalState)
-    .then(Link.geturl('checkme'), shouldEqual('/foo/checkme'))
+    .then(Route.geturl('checkme'), shouldEqual('/foo/checkme'))
   })
 })

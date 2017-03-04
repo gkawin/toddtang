@@ -10,7 +10,6 @@ import RegisterFormContainer from './containers/register-form/RegisterFormContai
 import LoginFormContainer from './containers/login-form/LoginFormContainer.jsx'
 import MemberOverviewContainer from './containers/member-pages/MemberOverviewContainer.jsx'
 import MemberTopNavContainer from './containers/member-pages/MemberTopNavContainer.jsx'
-import MemberLeftNavContainer from './containers/member-pages/MemberLeftNavContainer.jsx'
 
 import NotFound from './not-found/NotFound.jsx'
 
@@ -26,7 +25,6 @@ render((
       <Route path='/member/:username' component={MemberLayout}>
         <IndexRoute components={{
           top: MemberTopNavContainer,
-          left: MemberLeftNavContainer,
           children: MemberOverviewContainer
         }} />
       </Route>

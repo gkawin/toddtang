@@ -4,11 +4,10 @@ import Layout from './Layout.jsx'
 
 class MemberLayout extends React.Component {
   render () {
-    const { top, left, children } = this.props
+    const { top, children } = this.props
     return (
       <Layout top={top}>
-        <div className='member-layout__left'>{left}</div>
-        <div className='member-layout__overview'>{children}</div>
+        {children}
       </Layout>
     )
   }
@@ -16,7 +15,6 @@ class MemberLayout extends React.Component {
 
 MemberLayout.propTypes = {
   children: React.PropTypes.node,
-  left: React.PropTypes.node,
   top: React.PropTypes.node
 }
 

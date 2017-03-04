@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { compose } from 'recompose'
 
 import * as RegisterFormActions from '../../action-creators/RegisterFormActions'
-import { getFormStatus } from '../../register-form/selectors'
+import { getFormStatus } from '../../register/selectors'
 import ReduxFirebase from 'react-redux-firebase'
 import * as RegisterValidation from '../../register/RegisterValidation'
 import { required, minLength, emailFormat } from '../../register/RegisterRules'
