@@ -1,18 +1,15 @@
 import React, { PropTypes } from 'react'
 
 import MemberTopNav from '../../member-pages/MemberTopNav.jsx'
+import { geturl } from '../../route/Route'
 
 export default class MemberTopNavContainer extends React.Component {
   getMenuList () {
     return [
-      { text: 'แทงหวย', target: 'bet' },
-      { divider: true },
-      { text: 'ดูโพย', target: 'betlist' },
-      { divider: true },
-      { text: 'ตรวจผลรางวัล', target: 'check' },
-      { divider: true },
-      { text: 'ฝาก-ถอน', target: 'deposit' },
-      { divider: true },
+      { text: 'แทงหวย', target: geturl('bet') },
+      { text: 'ดูโพย', target: geturl('betlist') },
+      { text: 'ตรวจผลรางวัล', target: geturl('check') },
+      { text: 'ฝาก-ถอน', target: geturl('deposit') },
     ]
   }
 

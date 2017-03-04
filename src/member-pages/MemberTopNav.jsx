@@ -2,7 +2,7 @@ import './MemberTopNav.styl'
 
 import React, { PropTypes } from 'react'
 
-import MemberTopNavMenu from './MemberTopNavMenu.jsx'
+import TopNavMenu from '../top-nav/TopNavMenu.jsx'
 
 export default class MemberTopNav extends React.Component {
 
@@ -10,7 +10,7 @@ export default class MemberTopNav extends React.Component {
     return (
       <section className='member-top-nav'>
         <div className='member-top-nav__left'>
-          <MemberTopNavMenu
+          <TopNavMenu
             className='member-top-nav__menu'
             menus={this.props.menus}
           />
@@ -20,6 +20,7 @@ export default class MemberTopNav extends React.Component {
             className='member-top-nav__avatar' src='https://tw-react-prod.s3.amazonaws.com/6728f75a-ed8b-4d23-84ac-9d62ad583212.png'
           />
         </div>
+        <div className='member-top-nav__clear' />
       </section>
     )
   }
