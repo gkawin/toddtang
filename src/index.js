@@ -22,7 +22,7 @@ render((
         <Route path='register' component={RegisterFormContainer} />
         <Route path='login' component={LoginFormContainer} />
       </Route>
-      <Route path='/member/:username' component={MemberLayout}>
+      <Route path='/member/:userId' component={MemberLayout}>
         <IndexRoute components={{
           top: MemberTopNavContainer,
           children: MemberOverviewContainer
