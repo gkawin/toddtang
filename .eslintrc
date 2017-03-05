@@ -15,6 +15,7 @@
     "no-console": "warn",
     "no-undef": "error",
     "no-trailing-spaces": "off",
+    "comma-dangle": "off",
 
     "import/named": "error",
     "import/namespace": "error"
