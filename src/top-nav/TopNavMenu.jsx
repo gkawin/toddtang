@@ -6,8 +6,8 @@ import classNames from 'classnames'
 import { Link } from 'react-router'
 
 const MemberTopNavMenu = (props) => {
-  const renderMenuItems = () => _.map(props.menus, menuItems)
-  const menuItems = (item, key) => {
+  const renderMenuItem = () => _.map(props.menus, MenuItem)
+  const MenuItem = (item, key) => {
     return (
       <Link
         key={`${key}${item.target}`}
@@ -23,7 +23,7 @@ const MemberTopNavMenu = (props) => {
 
   return (
     <div className={menuCls}>
-      {renderMenuItems()}
+      {renderMenuItem()}
     </div>
   )
 }
