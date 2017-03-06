@@ -11,7 +11,7 @@ const config = {
     },
     loaders: {
       stylus: { config: { use: [ nib() ] } },
-      babel: { test: /\.jsx?/ }
+      babel: { test: /\.jsx?/ },
     },
     extractText: {
       allChunks: true
@@ -28,6 +28,9 @@ const config = {
 }
 
 if (isTest) {
+  config.webpack.compat = {
+    enzyme: true
+  }
   config.karma = {
     testContext: './test/test-entry.js',
     frameworks: [ 'mocha', 'chai' ],

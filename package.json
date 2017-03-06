@@ -8,10 +8,10 @@
     "deploy": "npm run build && firebase deploy",
     "clean": "nwb clean-app",
     "dev": "NODE_ENV=development nwb serve-react-app",
-    "dev:ui": "start-storybook -p 3001 -c .storybook",
-    "test": "NODE_ENV=testing nwb test",
-    "test:coverage": "NODE_ENV=testing nwb test-react --coverage",
-    "test:watch": "NODE_ENV=testing nwb test-react --server",
+    "dev:ui": "NODE_ENV=test start-storybook -p 3001 -c .storybook",
+    "test": "NODE_ENV=test nwb test",
+    "test:coverage": "NODE_ENV=test nwb test-react --coverage",
+    "test:watch": "NODE_ENV=test nwb test-react --server",
     "lint": "eslint src"
   },
   "dependencies": {
