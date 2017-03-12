@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/gkawin/toddtang/issues"
   },
-  "homepage": "https://github.com/gkawin/toddtang#readme"
+  "homepage": "https://github.com/gkawin/toddtang#readme",
+  "dependencies": {
+    "firebase": "^3.7.1",
+    "firebase-functions": "^0.5.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^3.5.0"
+  }
 }
