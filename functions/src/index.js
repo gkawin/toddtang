@@ -1,5 +1,6 @@
-import functions from 'firebase-functions'
+import { https } from 'firebase-functions'
+import * as Database from './database'
 
-exports.hello = functions.https.onRequest((req, res) => {
-  res.status(404).send('wowookosdoksdoksodkaosc,aos,cao')
+export const hello = https.onRequest((req, res) => {
+  res.status(404).send('wowookosdoksdoksodkaosc,aos,cao' + Database.echo())
 })
