@@ -7,7 +7,7 @@
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server",
-    "test:na": "babel src --out-file index.js"
+    "test:na": "babel src --out-dir ./"
   },
   "dependencies": {
     "firebase-admin": "^4.1.2",
