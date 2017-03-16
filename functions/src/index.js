@@ -1,6 +1,9 @@
-import { https } from 'firebase-functions'
-import * as Database from './database'
+import * as Functions from 'firebase-functions'
+import * as Admin from 'firebase-admin'
+Admin.initializeApp(Functions.config().firebase)
 
-exports.hello = https.onRequest((req, res) => {
-  res.status(404).send('wowookosdoksdoksodkaosc,aos,cao' + Database.echo())
+exports.addMessage = Functions.https.onRequest(async (req, res) => {
+  const original = req.query.text
+  const snapshot = await Admin.database().ref('/messages').push({ original: original })
+  res.redirect(303, snapshot.ref)
 })

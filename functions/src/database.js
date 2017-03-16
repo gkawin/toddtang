@@ -1,2 +1,0 @@
-
-export const echo = () => 'echooooooooooo'
