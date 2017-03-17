@@ -4,7 +4,7 @@ const webpack = require('webpack')
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: ['babel-polyfill', path.resolve(BASE, 'src', 'index.js')],
+  entry: path.resolve(BASE, 'src', 'functions.js'),
   output: {
     path: BASE,
     filename: 'index.js',
