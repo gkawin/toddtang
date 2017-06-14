@@ -7,11 +7,12 @@
     "build": "NODE_ENV=production nwb build-react-app",
     "deploy": "npm run build && firebase deploy",
     "clean": "nwb clean-app",
-    "dev": "NODE_ENV=development nwb serve-react-app",
+    "dev": "set NODE_ENV=development nwb serve-react-app",
     "test": "NODE_ENV=testing nwb test",
     "test:coverage": "NODE_ENV=testing nwb test-react --coverage",
     "test:watch": "NODE_ENV=testing nwb test-react --server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "algebraic-type": "^1.1.0",
@@ -33,6 +34,7 @@
     "updeep": "^1.0.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.1.3",
     "autoprefixer": "^6.6.1",
     "babel-eslint": "^7.1.1",
     "chai": "^3.5.0",
