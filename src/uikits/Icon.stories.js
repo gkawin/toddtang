@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react'
 import _ from 'lodash'
 
 import Icon, { getAllIcons } from './Icon.jsx'
+const icons = getAllIcons()
 
 storiesOf('Icon', module)
   .add('all Icon', () => {
-    const icons = getAllIcons()
     return (
       <div style={{ fontFamily: 'Tahoma' }}>
         {_.map(icons, (icon, key) => (
