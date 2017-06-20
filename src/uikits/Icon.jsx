@@ -1,7 +1,7 @@
-import './Icon.styl'
 
 import React from 'react'
-import Classnames from 'classnames'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import ReactFontAwesome from 'react-fa'
 import _ from 'lodash'
 
@@ -10,8 +10,7 @@ const propFields = [
   'pulse', 'inverse', 'spin' // boolean
 ]
 
-export const iconClassname = (className) => Classnames('icon', className)
-
+export const iconClassname = (className) => classNames('icon', className)
 export const getAllIcons = () => _(document.styleSheets)
   .toArray()
   .map('cssRules')
@@ -34,8 +33,8 @@ const Icon = (props) => (
 )
 
 Icon.propTypes = {
-  onClick: React.PropTypes.func,
-  className: React.PropTypes.string,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
 }
 
 export default Icon
