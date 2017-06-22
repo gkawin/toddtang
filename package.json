@@ -12,6 +12,7 @@
     "test:coverage": "NODE_ENV=testing nwb test-react --coverage",
     "test:watch": "NODE_ENV=testing nwb test-react --server",
     "lint": "eslint src",
+    "lint:css": "stylelint './src/components/**/*.jsx'",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
@@ -53,7 +54,10 @@
     "nib": "^1.1.2",
     "nwb": "^0.14.x",
     "nwb-stylus": "^0.6.0",
-    "precss": "^1.4.0"
+    "precss": "^1.4.0",
+    "stylelint": "^7.11.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-styled-components": "^0.1.2"
   },
   "author": "Kawin Glomjai <g.kawin@live.com>",
   "license": "MIT",
