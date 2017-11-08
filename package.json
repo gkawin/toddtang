@@ -53,7 +53,9 @@
     "nib": "^1.1.2",
     "nwb": "^0.14.x",
     "nwb-stylus": "^0.6.0",
-    "precss": "^1.4.0"
+    "precss": "^1.4.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "author": "Kawin Glomjai <g.kawin@live.com>",
   "license": "MIT",
