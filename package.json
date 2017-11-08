@@ -4,13 +4,7 @@
   "description": "Describe toddtang here",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production nwb build-react-app",
-    "deploy": "npm run build && firebase deploy",
-    "clean": "nwb clean-app",
-    "dev": "set NODE_ENV=development nwb serve-react-app",
-    "test": "NODE_ENV=testing nwb test",
-    "test:coverage": "NODE_ENV=testing nwb test-react --coverage",
-    "test:watch": "NODE_ENV=testing nwb test-react --server",
+    "dev": "set env NODE_ENV=development webpack-dev-server --open --config webpack.dev.js --hot --inline --progress --port 9000",
     "lint": "eslint src",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
