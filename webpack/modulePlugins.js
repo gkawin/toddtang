@@ -11,7 +11,7 @@ module.exports = [
     )
   }),
   new HtmlWebpackPlugin({
-    title: 'Movies Management',
+    title: 'Todd - Tang :: powred by Mee Len Houei',
     template: path.join(__dirname, '..', 'src/template', 'index.html')
   }),
   new CleanWebpackPlugin([ 'public' ])
