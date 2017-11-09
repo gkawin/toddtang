@@ -26,7 +26,8 @@ render((
         <IndexRoute components={{
           top: MemberTopNavContainer,
           children: MemberOverviewContainer
-        }} />
+        }}
+        />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

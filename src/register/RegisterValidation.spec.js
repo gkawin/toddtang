@@ -10,13 +10,13 @@ describe('RegisterValidation', () => {
     it('should contain error messages', () => {
       const result = fn(input, [ ruleRunner('email', 'E-mail', [ emailFormat ]) ])
       const anotherResult = fn(input, [ ruleRunner('username', 'Username', [ minLength(6) ]) ])
-      expect(result.email).to.be.exist()
-      expect(anotherResult.username).to.be.exist()
+      expect(result.email).not.toBeNull()
+      expect(anotherResult.username).not.toBeNull()
     })
 
     it('should be pass check in [required] case, but its fail in [minLength] case', () => {
       const result = fn(input, [ ruleRunner('username', 'User-name', [ required, minLength(10) ]) ])
-      expect(result.username).to.be.exist()
+      expect(result.username).not.toBeNull()
     })
   })
 })

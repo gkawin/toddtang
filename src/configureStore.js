@@ -1,19 +1,19 @@
 /* eslint import/named: off */
-import { createStore, compose } from 'redux'
-import { reactReduxFirebase } from 'react-redux-firebase'
-import * as Config from './config'
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import logger from 'redux-logger'
 
-export default function configureStore () {
-  const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f
-  const firebase = reactReduxFirebase(Config.firebase, { userProfile: 'users' })
+export default function configureStore (initialState) {
   const enhance = compose(
-    devTools,
-    firebase
+    applyMiddleware(...[thunk, logger]),
+    window.devToolsExtension || window.devToolsExtension(),
   )
-  const store = createStore(require('./reducers'), undefined, enhance)
+
+  const nextReducers = require('./reducers')
+  const store = createStore(nextReducers, initialState, enhance)
   if (module.hot) {
     module.hot.accept('./reducers', () => {
-      store.replaceReducer(require('./reducers'))
+      store.replaceReducer(nextReducers)
     })
   }
   return store
