@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   red50: '#ffebee',
   red100: '#ffcdd2',
   red200: '#ef9a9a',
