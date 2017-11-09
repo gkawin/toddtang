@@ -10,7 +10,6 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@storybook/react": "^3.2.14",
     "algebraic-type": "^1.1.0",
     "classnames": "^2.2.5",
     "email-validator": "^1.0.7",
@@ -31,6 +30,7 @@
     "updeep": "^1.0.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.14",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
     "babel-jest": "^21.2.0",
