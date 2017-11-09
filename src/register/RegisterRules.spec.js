@@ -1,10 +1,11 @@
 import _ from 'lodash'
+import expect from 'expect'
 
 import * as RegisterRules from './RegisterRules'
 
 describe('Register RegisterRules', () => {
   describe('called input required', () => {
-    it('should return required\'s error message when input is empty', () => {
+    it.only('should return required\'s error message when input is empty', () => {
       const result = RegisterRules.required(null)
       expect(result).to.be.exist()
     })
