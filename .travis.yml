@@ -9,15 +9,8 @@ cache:
   directories:
     - node_modules
 
-before_install:
-  - npm install codecov
-
 script:
-  - yarn test:coverage
   - yarn lint
-
-after_success:
-  - cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 
 branches:
   only:
