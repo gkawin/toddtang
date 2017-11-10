@@ -1,4 +1,5 @@
-export default {
+
+const colors = {
   red50: '#ffebee',
   red100: '#ffcdd2',
   red200: '#ef9a9a',
@@ -211,3 +212,5 @@ export default {
   white: '#ffffff',
   black: '#000000',
 }
+
+export default colors

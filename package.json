@@ -21,11 +21,13 @@
     "react-fa": "^5.0.0",
     "react-redux": "^5.0.2",
     "react-router": "^4.2.0",
+    "react-select": "^1.0.0-rc.10",
     "recompose": "^0.26.0",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
+    "semantic-ui-react": "^0.76.0",
     "styled-components": "^2.1.0",
     "updeep": "^1.0.0"
   },

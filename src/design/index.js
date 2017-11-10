@@ -1,5 +1,3 @@
-import * as Colors from './colors'
+import colors from './colors'
 
-export default {
-  Colors
-}
+export const Colors = colors
