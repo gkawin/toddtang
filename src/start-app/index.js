@@ -6,17 +6,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 //
 // import configureStore from '../configureStore'
 
-import HomePage from './HomePage.jsx'
+import RegisterFormContainer from '../containers/register/RegisterFormContainer.jsx'
+
 import App from './App.jsx'
 
 render((
   <Router>
     <Switch>
-      <Route path='/' component={HomePage} />
-      <Route path='/app' component={() => {
-        return (<div>app</div>)
-      }}
-      />
+      {/* <Route path='/' component={HomePage} /> */}
+      <Route path='/register' component={RegisterFormContainer} />
+      <Route path='/app' render={(props) => <App {...props} />} />
       <Route component={() => <div>404</div>} />
     </Switch>
   </Router>
