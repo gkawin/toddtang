@@ -1,14 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form } from 'semantic-ui-react'
+import { Form, Message } from 'semantic-ui-react'
+import get from 'lodash/get'
 
 class RegisterForm extends React.PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.fun,
+    formState: PropTypes.oneOf(['loading', 'success', 'error']),
+    onSubmit: PropTypes.func,
     className: PropTypes.string,
+    errorItems: PropTypes.object,
   }
 
-  state = { email: '', password: '', actualName: '', telephone: '', bank: '', accountNumber: '', acceptCondition: false }
+  static defaultProps = { errorItems: { } }
+
+  state = {
+    email: '',
+    password: '',
+    actualName: '',
+    telephone: '',
+    bank: '',
+    accountNumber: '',
+    acceptCondition: false,
+  }
+
+  getFormState = () => !this.props.formState ? null : ({ [this.props.formState]: true })
 
   handleChange = (e, { name, value, checked }) => {
     e.preventDefault()
@@ -20,10 +35,20 @@ class RegisterForm extends React.PureComponent {
     this.props.onSubmit(this.state)
   }
 
+  renderError = () => {
+    return !get(this.getFormState(), 'error') ? null : (
+      <Message
+        error
+        {...this.props.errorItems}
+      />
+    )
+  }
+
   render () {
     return (
       <div className={this.props.className}>
-        <Form onSubmit={this.onSubmitForm}>
+        <Form onSubmit={this.onSubmitForm} {...this.getFormState()}>
+          {this.renderError()}
           <Form.Input
             required
             name='email'
