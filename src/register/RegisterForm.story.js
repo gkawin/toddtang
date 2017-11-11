@@ -5,6 +5,6 @@ import RegisterForm from './RegisterForm.jsx'
 
 storiesOf('RegisterForm', module)
   .add('Form initialize', () => (
-    <RegisterForm />
+    <RegisterForm onSubmit={() => {}} />
   )
 )
