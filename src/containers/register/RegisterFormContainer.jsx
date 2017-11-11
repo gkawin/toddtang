@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
 
@@ -19,7 +20,7 @@ const fieldValidations = [
 
 class RegisterFormContainer extends React.PureComponent {
   static propTypes = {
-    onSubmit: React.PropTypes.func
+    onSubmit: PropTypes.func
   }
 
   // onSubmit = (e) => {
