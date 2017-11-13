@@ -1,9 +1,9 @@
 import React from 'react'
 import { Visibility } from 'semantic-ui-react'
 
-import HomepageFooter from '../../homepage/HomepageFooter.jsx'
-import FixedMenu from '../../homepage/FixedMenu.jsx'
-import Jumbotron from '../../homepage/Jumbotron.jsx'
+import Footer from '../../homepage/front-page/Footer.jsx'
+import FixedMenu from '../../homepage/front-page/FixedMenu.jsx'
+import Jumbotron from '../../homepage/front-page/Jumbotron.jsx'
 
 class HomePage extends React.PureComponent {
   state = { visible: false }
@@ -20,7 +20,7 @@ class HomePage extends React.PureComponent {
         >
           <Jumbotron />
         </Visibility>
-        <HomepageFooter />
+        <Footer />
       </div>
     )
   }

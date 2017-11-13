@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 //
 // import configureStore from '../configureStore'
 
-import RegisterFormContainer from '../containers/register/RegisterFormContainer.jsx'
+import RegisterFormContainer from '../containers/homepage/RegisterFormContainer.jsx'
 import HomePageContainer from '../containers/homepage/HomepageContainer.jsx'
-import AppLoginContainer from '../containers/login/AppLoginContainer.jsx'
+import AppLoginContainer from '../containers/homepage/AppLoginContainer.jsx'
 
 import App from './App.jsx'
 
