@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 

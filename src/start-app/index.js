@@ -23,3 +23,7 @@ render((
     </Switch>
   </Router>
 ), document.querySelector('#app'))
+
+if (module.hot) {
+  module.hot.accept()
+}
