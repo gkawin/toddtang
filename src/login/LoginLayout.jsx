@@ -28,8 +28,7 @@ class LoginLayout extends React.PureComponent {
         <Grid textAlign='center' verticalAlign='middle' >
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h2' color='teal' textAlign='center'>
-              <Image src='/logo.png' />
-              {' '}Log-in to your account
+              Log-in to your account
             </Header>
             <Form size='large' onSubmit={this.onSubmit}>
               <Segment stacked>
