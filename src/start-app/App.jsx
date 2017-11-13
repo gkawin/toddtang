@@ -1,33 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { HashRouter, Route, Switch } from 'react-router-dom'
-//
-const routes = [
-  {
-    path: '/lotto',
-    component: (props) => {
-      console.log(props)
-      return (<div>Lotto</div>)
-    },
-    routes: [
-      { path: '/bet' }
-    ]
-  },
-  {
-    path: '/transaction',
-    component: (props) => {
-      console.log(props)
-      return (<div>transaction</div>)
-    },
-    routes: [
-      { path: '/deposit' },
-      { path: '/withdraw' },
-    ]
-  },
-  {
-    path: '/profile',
-  },
-]
+import { Provider } from 'react-redux'
+import configureStore from '../configureStore'
+
+import appRoutes from './appRoutes'
+
+const store = configureStore()
 
 class App extends React.PureComponent {
   renderRoute = (route, i) => {
@@ -39,11 +17,13 @@ class App extends React.PureComponent {
 
   render () {
     return (
-      <HashRouter>
-        <Switch>
-          {routes.map(this.renderRoute)}
-        </Switch>
-      </HashRouter>
+      <Provider store={store}>
+        <HashRouter>
+          <Switch>
+            {appRoutes.map(this.renderRoute)}
+          </Switch>
+        </HashRouter>
+      </Provider>
     )
   }
 }
