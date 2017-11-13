@@ -1,9 +1,5 @@
+import { combineReducers } from 'redux'
 
-export default (state = {}, action) => {
-  switch (action.type) {
-    case 'RegisterRequested':
-      return { status: 'applying', error: null }
-    default:
-      return state
-  }
-}
+export default combineReducers({
+  registerState: (state) => (action) => state
+})

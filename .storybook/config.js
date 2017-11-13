@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react'
 
-const context = require.context('../src', true, /\.stories\.js$/)
+const context = require.context('../src', true, /\.story\.js$/)
 
 function loadStories () {
   const stories = context.keys()
