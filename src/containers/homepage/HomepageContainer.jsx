@@ -13,7 +13,6 @@ class HomePage extends React.PureComponent {
     return (
       <div>
         { this.state.visible ? <FixedMenu /> : null }
-
         <Visibility
           onBottomPassed={this.showFixedMenu}
           onBottomVisible={this.hideFixedMenu}

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import RegisterFormContainer from '../containers/register/RegisterFormContainer.jsx'
 import HomePageContainer from '../containers/homepage/HomepageContainer.jsx'
+import AppLoginContainer from '../containers/login/AppLoginContainer.jsx'
 
 import App from './App.jsx'
 
@@ -16,6 +17,7 @@ render((
     <Switch>
       <Route path='/' exact component={HomePageContainer} />
       <Route path='/register' component={RegisterFormContainer} />
+      <Route path='/login' component={AppLoginContainer} />
       <Route path='/app' render={(props) => <App {...props} />} />
       <Route component={() => <div>404</div>} />
     </Switch>
