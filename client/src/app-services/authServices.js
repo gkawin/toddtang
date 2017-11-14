@@ -1,5 +1,5 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 export const signupApplication = async (payload) => {
-  const result = await axios.post('/')
+  // const result = await axios.post('/')
 }
