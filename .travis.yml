@@ -10,8 +10,8 @@ cache:
     - node_modules
 
 script:
-  - yarn test
-  - yarn lint
+  - cd client && yarn test
+  - cd client && yarn lint
 
 branches:
   only:
