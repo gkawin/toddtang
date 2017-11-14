@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LoginLayout from '../../login/LoginLayout.jsx'
+import LoginLayout from '../../homepage/login/LoginLayout.jsx'
 
 class AppLoginContainer extends React.Component {
   state = {

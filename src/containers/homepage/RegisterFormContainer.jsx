@@ -8,7 +8,7 @@ import { compose } from 'recompose'
 import * as RegisterValidation from '../../register/RegisterValidation'
 import { required, minLength, emailFormat } from '../../register/RegisterRules'
 
-import RegisterForm from '../../register/RegisterForm.jsx'
+import RegisterForm from '../../homepage/register/RegisterForm.jsx'
 
 const fieldValidations = [
   RegisterValidation.ruleRunner('password', 'รหัสผ่าน', [ required, minLength(6) ]),
