@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "algebraic-type": "^1.1.0",
+    "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "email-validator": "^1.0.7",
     "firebase": "^4.6.1",
