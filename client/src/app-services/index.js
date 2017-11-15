@@ -1,3 +1,3 @@
-import * as authServices from './authServices'
-
-export const signup = authServices.signup
+import * as firebaseServices from './firebaseServices'
+import * as userServices from './userServices'
+export default { }

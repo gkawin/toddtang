@@ -1,7 +1,4 @@
 import firebase from 'firebase'
-import func from 'firebase-functions'
-
-const config = func.config().firebase
 
 let appConnection
 function makeConnection (config) {
@@ -10,7 +7,7 @@ function makeConnection (config) {
   }
 }
 
-makeConnection(config)
+makeConnection()
 
 export const db = appConnection.database()
 export const auth = appConnection.auth()
