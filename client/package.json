@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "algebraic-type": "^1.1.0",
+    "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "email-validator": "^1.0.7",
     "firebase": "^4.6.1",
+    "firebase-functions": "^0.7.3",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
