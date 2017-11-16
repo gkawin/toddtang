@@ -1,3 +1,4 @@
-import * as authServices from './authServices'
+import userServices from './userServices'
+import apiServices from './apiServices'
 
-export const signup = authServices.signup
+export const userApi = userServices(apiServices)

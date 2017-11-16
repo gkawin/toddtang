@@ -1,5 +1,7 @@
 import React from 'react'
 import { Visibility } from 'semantic-ui-react'
+import { userApi } from 'app-services'
+console.log(userApi.createUser())
 
 import Footer from '../../homepage/front-page/Footer.jsx'
 import FixedMenu from '../../homepage/front-page/FixedMenu.jsx'
