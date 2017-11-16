@@ -1,5 +1,6 @@
-export default {
-  createNewUser: () => async ({ db }) => {
 
+export default (api) => ({
+  createUser: (payload) => {
+    console.log(api)
   }
-}
+})

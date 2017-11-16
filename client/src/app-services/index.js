@@ -1,3 +1,4 @@
-import * as firebaseServices from './firebaseServices'
-import * as userServices from './userServices'
-export default { }
+import userServices from './userServices'
+import apiServices from './apiServices'
+
+export const userApi = userServices(apiServices)

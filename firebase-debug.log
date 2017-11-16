@@ -1,0 +1,17 @@
+[debug] [2017-11-15T15:34:01.700Z] ----------------------------------------------------------------------
+[debug] [2017-11-15T15:34:01.702Z] Command:       /Users/gkawin/.nvm/versions/node/v8.9.0/bin/node /Users/gkawin/.nvm/versions/node/v8.9.0/bin/firebase deploy --only functions
+[debug] [2017-11-15T15:34:01.703Z] CLI Version:   3.14.0
+[debug] [2017-11-15T15:34:01.703Z] Platform:      darwin
+[debug] [2017-11-15T15:34:01.703Z] Node Version:  v8.9.0
+[debug] [2017-11-15T15:34:01.703Z] Time:          Wed Nov 15 2017 22:34:01 GMT+0700 (ICT)
+[debug] [2017-11-15T15:34:01.703Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-15T15:34:01.715Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-15T15:34:01.715Z] > authorizing via signed-in user
+[debug] [2017-11-15T15:34:01.717Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toddteng-bbdc7  
+ Wed Nov 15 2017 22:34:01 GMT+0700 (ICT)
+[debug] [2017-11-15T15:34:01.748Z] Error: getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
