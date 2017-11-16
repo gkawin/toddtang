@@ -1,5 +1,5 @@
 {
-  "name": "Rest of the middle earth.",
+  "name": "REST-of-the-middle-earth.",
   "description": "Cloud Functions for Firebase.",
   "scripts": {
     "serve": "firebase serve --only functions",
@@ -9,6 +9,10 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
     "firebase": "^4.6.2",
     "firebase-admin": "^5.5.0",
     "firebase-functions": "^0.7.1"
