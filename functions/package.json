@@ -1,6 +1,6 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "Rest of the middle earth.",
+  "description": "Cloud Functions for Firebase.",
   "scripts": {
     "serve": "firebase serve --only functions",
     "shell": "firebase experimental:functions:shell",
@@ -9,8 +9,12 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "firebase-admin": "~5.4.2",
+    "firebase": "^4.6.2",
+    "firebase-admin": "^5.5.0",
     "firebase-functions": "^0.7.1"
   },
-  "private": true
+  "private": false,
+  "engines": {
+    "node": "<=6.11.1"
+  }
 }
