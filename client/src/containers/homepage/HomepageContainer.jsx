@@ -1,6 +1,6 @@
 import React from 'react'
 import { Visibility } from 'semantic-ui-react'
-import { userApi } from 'app-services'
+import { signup } from 'app-services'
 
 import Footer from '../../homepage/front-page/Footer.jsx'
 import FixedMenu from '../../homepage/front-page/FixedMenu.jsx'
@@ -11,6 +11,7 @@ class HomePage extends React.PureComponent {
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
   render () {
+    console.log(signup({ 'hahaha': 'dadada' }))
     return (
       <div>
         { this.state.visible ? <FixedMenu /> : null }

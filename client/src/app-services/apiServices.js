@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://some-domain.com/api/',
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
+  baseURL: 'https://us-central1-toddteng-bbdc7.cloudfunctions.net/apiV1',
+  timeout: 10000,
 })
