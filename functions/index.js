@@ -8,15 +8,12 @@ const morgan = require('morgan')
 
 const routes = require('./routes')
 
-const config = functions.config().firebase
 const app = express()
-firebase.initializeApp(config)
 
 app.use(morgan('dev'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(compression())
-app.use('/', routes)
-
+app.use(routes(app))
 
 exports.api = functions.https.onRequest(app)

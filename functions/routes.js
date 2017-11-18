@@ -2,8 +2,11 @@
 const express = require('express')
 const route = express.Router()
 
-const UsersRoute = require('./services/users/route')
+const Users = require('./users')
 
-module.exports = [
-  route.use('/users', UsersRoute),
-]
+module.exports = (app) => (req, res, next) => {
+  app.route('/users')
+  .get(Users.getAllUsers)
+  .post(Users.createUser)
+  next()
+}
