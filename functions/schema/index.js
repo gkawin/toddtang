@@ -10,8 +10,15 @@ const typeDefs = /* GraphQL */`
     email: String
   }
 
+  type Bank {
+    key: String!
+    text: String
+    value: String
+  }
+
   type Query {
     getUsers: [User]!
+    getBanks: [Bank]
   }
 `
 

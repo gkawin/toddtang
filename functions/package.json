@@ -19,6 +19,7 @@
     "firebase-functions": "^0.7.1",
     "graphql": "^0.11.7",
     "graphql-tools": "^2.8.0",
+    "lodash": "^4.17.4",
     "morgan": "^1.9.0"
   },
   "private": false,
