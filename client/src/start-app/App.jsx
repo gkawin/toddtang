@@ -9,7 +9,7 @@ const store = configureStore()
 
 class App extends React.PureComponent {
   renderRoute = (route, i) => {
-    return (<Route key={i} path={route.path} render={props => (
+    return (<Route key={i} path={`/:username${route.path}`} render={props => (
       <route.component {...props} routes={route.routes} />
     )}
     />)
@@ -21,6 +21,7 @@ class App extends React.PureComponent {
         <HashRouter>
           <Switch>
             {appRoutes.map(this.renderRoute)}
+            <Route component={() => <div>404</div>} />
           </Switch>
         </HashRouter>
       </Provider>

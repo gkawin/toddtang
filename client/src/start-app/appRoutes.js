@@ -1,27 +1,13 @@
-// temporary
-import React from 'react'
+import AccountPanel from '../account-profile/AccountPanel.jsx'
+
 export default [
   {
-    path: '/lotto',
-    component: (props) => {
-      return (<div>Lotto</div>)
-    },
+    path: '/account',
+    component: AccountPanel,
     routes: [
-      { path: '/bet' }
+      {
+        path: '/profile'
+      }
     ]
   },
-
-  // {
-  //   path: '/transaction',
-  //   component: (props) => {
-  //     return (<div>transaction</div>)
-  //   },
-  //   routes: [
-  //     { path: '/deposit' },
-  //     { path: '/withdraw' },
-  //   ]
-  // },
-  // {
-  //   path: '/profile',
-  // },
 ]
