@@ -1,10 +1,9 @@
-
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import EmailSetting from './EmailSetting.jsx'
 
-storiesOf('Error', module)
-  .add('404', () => (
-    <EmailSetting />
+storiesOf('EmailSetting', module)
+  .add('Form initialize', () => (
+    <EmailSetting currentEmail='omg@todteng.com' />
   ))

@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import { Form, Input } from 'semantic-ui-react'
 
 class EmailSetting extends React.PureComponent {
-  static propTypes = { className: PropTypes.string, currentEmail: PropTypes.string }
+  static propTypes = {
+    className: PropTypes.string,
+    currentEmail: PropTypes.string
+  }
 
   handleSubmit = () => {
 
@@ -16,7 +19,7 @@ class EmailSetting extends React.PureComponent {
       <Form onSubmit={this.handleSubmit} className={this.props.className}>
         <Form.Field className='current-email'>
           <label>อีเมล์ปัจจุบัน</label>
-          <Input type='email' name='currentEmail' disabled defaultValue={this.props.currentEmail} />
+          <Input type='email' name='currentEmail' disabled value={this.props.currentEmail} />
         </Form.Field>
         <Form.Input
           required
