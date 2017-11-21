@@ -4,6 +4,7 @@ import { Form, Input } from 'semantic-ui-react'
 
 class EmailSetting extends React.PureComponent {
   static propTypes = { className: PropTypes.string, currentEmail: PropTypes.string }
+
   handleSubmit = () => {
 
   }
