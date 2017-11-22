@@ -1,40 +1,42 @@
 import React from 'react'
-import { Accordion } from 'semantic-ui-react'
-
-import EmailSetting from './EmailSetting.jsx'
+import PropTypes from 'prop-types'
+import { Accordion, Container } from 'semantic-ui-react'
 
 class AccountPanel extends React.PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  }
+
   state = { activeIndex: 0 }
+
   handleClick = (e, { index }) => {
     e.preventDefault()
     this.setState({ activeIndex: index })
   }
+
+  renderAccordSection = (component, idx) => {
+    return (
+      <div>
+        <Accordion.Title
+          active={this.state.activeIndex === idx}
+          content={component.type.displayName || ''}
+          index={idx}
+          onClick={this.handleClick}
+        />
+        <Accordion.Content active={this.state.activeIndex === idx}>
+          <Container>
+            {component}
+          </Container>
+        </Accordion.Content>
+      </div>
+    )
+  }
+
   render () {
-    const { activeIndex } = this.state
     return (
       <div className='account-panel'>
         <Accordion fluid styled>
-          <div>
-            <Accordion.Title
-              active={activeIndex === 0}
-              content='Email'
-              index={0}
-              onClick={this.handleClick}
-            />
-            <Accordion.Content active={activeIndex === 0}>
-              <EmailSetting />
-            </Accordion.Content>
-          </div>
-
-          <div>
-            <Accordion.Title
-              active={activeIndex === 1}
-              content='Password'
-              index={1}
-              onClick={this.handleClick}
-            />
-            <Accordion.Content active={activeIndex === 1} content={(<div>dadadad</div>)} />
-          </div>
+          {React.Children.map(this.props.children, this.renderAccordSection)}
         </Accordion>
         {/* <div className='account-profile__email'>change email form</div>
         <div className='account-profile__password'>change password form</div>

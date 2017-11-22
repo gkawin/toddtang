@@ -33,5 +33,5 @@ class EmailSetting extends React.PureComponent {
     )
   }
 }
-
+EmailSetting.displayName = 'Email Setting'
 export default EmailSetting
