@@ -3,14 +3,13 @@ import PropTypes from 'prop-types'
 import { Form } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import banks from './banks-logo/banks.json'
+import banks from '../banks-resources/banks.json'
 
 class BankAccountSetting extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string
   }
   render () {
-    console.log(banks)
     return (
       <Form onSubmit={this.handleSubmit} className={this.props.className}>
         <Form.Select
