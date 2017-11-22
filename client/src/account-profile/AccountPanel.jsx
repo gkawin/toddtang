@@ -38,10 +38,6 @@ class AccountPanel extends React.PureComponent {
         <Accordion fluid styled>
           {React.Children.map(this.props.children, this.renderAccordSection)}
         </Accordion>
-        {/* <div className='account-profile__email'>change email form</div>
-        <div className='account-profile__password'>change password form</div>
-        <div className='account-profile__bank-account'>change bank account form</div>
-        <div className='account-profile__notification'>notification</div> */}
       </div>
     )
   }
