@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form } from 'semantic-ui-react'
-import styled from 'styled-components'
+import { Form, Divider } from 'semantic-ui-react'
 
 import * as Bank from '../bank-resources/bank'
 
@@ -10,31 +9,18 @@ class BankAccountSetting extends React.PureComponent {
     className: PropTypes.string
   }
   render () {
-    console.log(Bank.getImage('bbl'))
     return (
       <Form onSubmit={this.handleSubmit} className={this.props.className}>
         <Form.Select
-          required
           name='bank'
           label='บัญชีปัจจุบัน'
-          options={[ { key: 'bbl', text: 'ธนาคารกรุงเทพ​ (08x-xxx-xxx-4)', value: 'bbl', className: 'bbl icon' } ]}
+          options={Bank.getOptions()}
           onChange={this.handleChange}
         />
-        <Form.Button content='เปลี่ยนแปลงอีเมล์' />
+        <Form.Button content='เปลี่ยนแปลงบัญชีธนาคาร' />
       </Form>
     )
   }
 }
 BankAccountSetting.displayName = 'Bank Account Setting'
-export default styled(BankAccountSetting)`
-  .bbl.icon::before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: ${th.bbl.color};
-    background-image: url(${require('../bank-resources/logos/bbl.svg')})
-  }
-`
+export default BankAccountSetting
