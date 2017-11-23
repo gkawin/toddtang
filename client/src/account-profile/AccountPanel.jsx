@@ -5,13 +5,28 @@ import { Accordion, Container } from 'semantic-ui-react'
 class AccountPanel extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node,
+    activeIndex: PropTypes.number,
   }
 
-  state = { activeIndex: 0 }
+  static defaultProps () { return ({ activeIndex: -1 }) }
+
+  state = { activeIndex: undefined }
+
+  componentDidMount = () => {
+    this.handleClick(
+      { preventDefault: () => { } },
+      { index: this.props.activeIndex }
+    )
+  }
+
+  toggleable (index) {
+    const activeIndex = this.state.activeIndex
+    return (activeIndex === index) ? -1 : index
+  }
 
   handleClick = (e, { index }) => {
     e.preventDefault()
-    this.setState({ activeIndex: index })
+    this.setState({ activeIndex: this.toggleable(index) })
   }
 
   renderAccordSection = (component, idx) => {
