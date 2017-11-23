@@ -2,11 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Divider } from 'semantic-ui-react'
 
+import OptionComponent from '../bank-resources/OptionComponent.jsx'
+
 import * as Bank from '../bank-resources/bank'
 
 class BankAccountSetting extends React.PureComponent {
   static propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    bankAbbr: PropTypes.oneOf(Bank.getBanksAbbreviation())
   }
   render () {
     return (
@@ -14,7 +17,7 @@ class BankAccountSetting extends React.PureComponent {
         <Form.Select
           name='bank'
           label='บัญชีปัจจุบัน'
-          options={Bank.getOptions()}
+          options={Bank.getOptions({ as: OptionComponent(this.props.bankAbbr) })}
           onChange={this.handleChange}
         />
         <Form.Button content='เปลี่ยนแปลงบัญชีธนาคาร' />
