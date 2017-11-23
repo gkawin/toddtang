@@ -19,7 +19,7 @@ class AccountPanel extends React.PureComponent {
       <div>
         <Accordion.Title
           active={this.state.activeIndex === idx}
-          content={component.type.displayName || ''}
+          content={component.props.title || ''}
           index={idx}
           onClick={this.handleClick}
         />

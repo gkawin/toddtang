@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form, Divider } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 import OptionComponent from '../bank-resources/OptionComponent.jsx'
 
@@ -20,10 +21,19 @@ class BankAccountSetting extends React.PureComponent {
           options={Bank.getOptions({ as: OptionComponent(this.props.bankAbbr) })}
           onChange={this.handleChange}
         />
+        <div className='bank-account-setting__add-new-account'>
+          <Button icon='add' />
+        </div>
         <Form.Button content='เปลี่ยนแปลงบัญชีธนาคาร' />
       </Form>
     )
   }
 }
-BankAccountSetting.displayName = 'Bank Account Setting'
-export default BankAccountSetting
+
+export default styled(BankAccountSetting)`
+  .bank-account-setting {
+    &__add-new-account {
+      margin-bottom: 10px;
+    }
+  }
+`

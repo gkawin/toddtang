@@ -42,5 +42,4 @@ class PasswordSetting extends React.PureComponent {
     )
   }
 }
-PasswordSetting.displayName = 'Password'
 export default PasswordSetting
