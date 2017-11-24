@@ -1,9 +1,9 @@
-import AccountPanel from '../account-profile/AccountPanel.jsx'
+import AccountProfileContainer from '../containers/account-profile/AccountProfileContainer.jsx'
 
 export default [
   {
     path: '/account',
-    component: AccountPanel,
+    component: AccountProfileContainer,
     routes: [
       {
         path: '/profile'

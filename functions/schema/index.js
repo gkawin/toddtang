@@ -7,13 +7,16 @@ const  resolvers = require('./resolvers')
 const typeDefs = /* GraphQL */`
   type User {
     id: ID!
-    email: String
+    email: String!
+    language: String! @defaultValue(value: "th")
+    bank_account: [Bank]
   }
 
   type Bank {
-    key: String!
-    text: String
-    value: String
+    abbr: String
+    code: String
+    offical_name: String
+    nice_name: String
   }
 
   type Query {
@@ -21,6 +24,4 @@ const typeDefs = /* GraphQL */`
     getBanks: [Bank]
   }
 `
-
-// Generate the schema object from your types definition.
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
