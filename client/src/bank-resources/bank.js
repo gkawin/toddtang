@@ -26,11 +26,3 @@ export const getOptions = (asComponent) => {
     }
   ]
 }
-
-// [ {
-//   key: 'bbl',
-//   text: 'ธนาคารกรุงเทพ​ (08x-xxx-xxx-4)',
-//   value: 'bbl',
-//   as: asCustomComponent,
-//   imageStyle: { 'foo': 'bar'}
-// } ]
