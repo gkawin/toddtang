@@ -18,7 +18,7 @@ class EmailSetting extends React.PureComponent {
     return (
       <Form onSubmit={this.handleSubmit} className={this.props.className}>
         <Form.Field className='current-email'>
-          <label>อีเมล์ปัจจุบัน</label>
+          <label>อีเมล์</label>
           <Input type='email' name='currentEmail' disabled value={this.props.currentEmail} />
         </Form.Field>
         <Form.Input
