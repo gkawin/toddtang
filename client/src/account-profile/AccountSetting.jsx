@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Accordion, Container } from 'semantic-ui-react'
 
-class AccountSettingPanel extends React.PureComponent {
+class AccountSetting extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node,
     activeIndex: PropTypes.number,
@@ -58,4 +58,4 @@ class AccountSettingPanel extends React.PureComponent {
   }
 }
 
-export default AccountSettingPanel
+export default AccountSetting

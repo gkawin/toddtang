@@ -1,7 +1,6 @@
 import _ from 'lodash'
 
 import { th as Information } from './banks.json'
-// import OptionComponent from './OptionComponent.jsx'
 
 export const getImage = (bankAbbr) => {
   return bankAbbr ? require(`./logos/${bankAbbr}.svg`) : null
