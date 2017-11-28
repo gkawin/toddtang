@@ -10,10 +10,13 @@ import BankAccountSetting from './BankAccountSetting.jsx'
 storiesOf('AccountProfilePanel', module)
   .add('Form initialize', () => (
     <AccountProfilePanel>
-      <AccountSetting>
+      <AccountSetting name='Setting'>
         <EmailSetting title='อีเมล์' currentEmail='omg@todteng.com' />
         <PasswordSetting title='รหัสผ่าน' />
         <BankAccountSetting title='บัญชีธนาคาร' />
       </AccountSetting>
+      {/* <ProfileSetting name='Profile'>
+        Fooo
+      </ProfileSetting> */}
     </AccountProfilePanel>
   ))
