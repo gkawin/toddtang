@@ -5,6 +5,7 @@ import { Menu, Segment } from 'semantic-ui-react'
 class AccountProfilePanel extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
   }
   state = { activeTab: 'Setting' }
 
@@ -14,11 +15,13 @@ class AccountProfilePanel extends React.PureComponent {
 
   renderTabContent () {
     return React.Children.toArray(this.props.children).map((child, idx) => {
-      return (
-        <div key={idx} className={`${child.props.name}__content`}>
-          {child}
-        </div>
-      )
+      if (this.state.activeTab === child.props.name) {
+        return (
+          <div key={idx} className={`${child.props.name}__content`}>
+            {child}
+          </div>
+        )
+      }
     })
   }
 
@@ -37,7 +40,7 @@ class AccountProfilePanel extends React.PureComponent {
 
   render () {
     return (
-      <div>
+      <div className={this.props.className}>
         <Menu tabular attached='top'>
           {this.renderTabs()}
         </Menu>
