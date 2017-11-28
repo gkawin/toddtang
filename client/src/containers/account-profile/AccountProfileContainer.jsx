@@ -21,7 +21,9 @@ class AccountProfileContainer extends React.PureComponent {
           <BankAccountSetting title='บัญชีธนาคาร' />
         </AccountSettings>
         <ProfileSettings name='Profile'>
-          Profile
+          <div>
+            Avatar
+          </div>
         </ProfileSettings>
       </AccountProfilePanel>
 
