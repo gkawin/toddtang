@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Accordion, Container } from 'semantic-ui-react'
 
-class AccountSetting extends React.PureComponent {
+class AccountSettings extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node,
     activeIndex: PropTypes.number,
@@ -50,7 +50,7 @@ class AccountSetting extends React.PureComponent {
   render () {
     return (
       <div className='account-panel'>
-        <Accordion fluid styled>
+        <Accordion fluid>
           {React.Children.map(this.props.children, this.renderAccordSection)}
         </Accordion>
       </div>
@@ -58,4 +58,4 @@ class AccountSetting extends React.PureComponent {
   }
 }
 
-export default AccountSetting
+export default AccountSettings
