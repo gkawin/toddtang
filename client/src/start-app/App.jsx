@@ -1,11 +1,7 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import configureStore from '../configureStore'
 
 import appRoutes from './appRoutes'
-
-const store = configureStore()
 
 class App extends React.PureComponent {
   renderRoute = (route, i) => {
@@ -17,14 +13,12 @@ class App extends React.PureComponent {
 
   render () {
     return (
-      <Provider store={store}>
-        <HashRouter>
-          <Switch>
-            {appRoutes.map(this.renderRoute)}
-            <Route component={() => <div>404</div>} />
-          </Switch>
-        </HashRouter>
-      </Provider>
+      <HashRouter>
+        <Switch>
+          {appRoutes.map(this.renderRoute)}
+          <Route component={() => <div>404</div>} />
+        </Switch>
+      </HashRouter>
     )
   }
 }
