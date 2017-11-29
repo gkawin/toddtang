@@ -14,7 +14,7 @@ render((
       <Route path='/' exact component={HomePageContainer} />
       <Route path='/signup' component={RegisterFormContainer} />
       <Route path='/login' component={AppLoginContainer} />
-      <Route path='/app/:username' component={App} />
+      <Route path='/app/:username' render={(props) => <App {...props} />} />
       <Route component={() => <div>404</div>} />
     </Switch>
   </Router>
