@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { inject, observer } from 'mobx-react'
+import { compose } from 'recompose'
 
 import AccountProfilePanel from '../../account-profile/AccountProfilePanel.jsx'
 import AccountSettings from '../../account-profile/AccountSettings.jsx'
@@ -8,7 +10,11 @@ import EmailSetting from '../../account-profile/EmailSetting.jsx'
 import PasswordSetting from '../../account-profile/PasswordSetting.jsx'
 import BankAccountSetting from '../../account-profile/BankAccountSetting.jsx'
 
-class AccountProfileContainer extends React.PureComponent {
+const enhance = compose(
+  inject('UserStore'),
+  observer
+)
+class AccountProfileContainer extends React.Component {
   static propTypes = {
     match: PropTypes.object
   }
@@ -31,4 +37,4 @@ class AccountProfileContainer extends React.PureComponent {
   }
 }
 
-export default AccountProfileContainer
+export default enhance(AccountProfileContainer)

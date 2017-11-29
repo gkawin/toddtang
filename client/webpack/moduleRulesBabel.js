@@ -18,6 +18,7 @@ module.exports = [
           'react'
         ],
         plugins: [
+          'transform-decorators-legacy',
           [ 'styled-components', { 'displayName': development } ],
           'transform-runtime',
           'transform-object-rest-spread',

@@ -1,7 +1,9 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { Provider } from 'mobx-react'
 
 import appRoutes from './appRoutes'
+import stores from '../stores'
 
 class App extends React.PureComponent {
   renderRoute = (route, i) => {
@@ -13,12 +15,14 @@ class App extends React.PureComponent {
 
   render () {
     return (
-      <HashRouter>
-        <Switch>
-          {appRoutes.map(this.renderRoute)}
-          <Route component={() => <div>404</div>} />
-        </Switch>
-      </HashRouter>
+      <Provider {...stores}>
+        <HashRouter>
+          <Switch>
+            {appRoutes.map(this.renderRoute)}
+            <Route component={() => <div>404</div>} />
+          </Switch>
+        </HashRouter>
+      </Provider>
     )
   }
 }
