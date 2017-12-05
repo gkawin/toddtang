@@ -31,15 +31,21 @@ class AppLayout extends React.Component {
         <Menu fixed='top' inverted className='app-layout__top-nav-fixed'>
           <Container>
             <Menu.Menu position='right'>
+              <Menu.Item link>
+                <Icon
+                  name='alarm'
+                  inverted
+                  className='app-layout__notification-icon'
+                />
+              </Menu.Item>
               <Dropdown
-                fluid
                 item
                 trigger={this.renderUserAvatar()}
                 options={options}
                 pointing='top left'
                 icon={null}
               />
-              <Icon name='alarm' inverted />
+
             </Menu.Menu>
           </Container>
 
@@ -64,6 +70,10 @@ export default styled(AppLayout)`
     }
     &__user-menu {
       width: 200px;
+    }
+    &__notification-icon {
+      margin: 0 !important;
+      width: 14px;
     }
   }
 `
