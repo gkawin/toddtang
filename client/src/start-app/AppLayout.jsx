@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Container, Dropdown, Image } from 'semantic-ui-react'
+import { Menu, Icon, Dropdown, Image, Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 class AppLayout extends React.Component {
@@ -29,21 +29,24 @@ class AppLayout extends React.Component {
     return (
       <div className={this.props.className}>
         <Menu fixed='top' inverted className='app-layout__top-nav-fixed'>
-          <Menu.Menu position='right'>
-            <Dropdown
-              fluid
-              item
-              trigger={this.renderUserAvatar()}
-              options={options}
-              pointing='top left'
-              icon={null}
-            />
-          </Menu.Menu>
-        </Menu>
+          <Container>
+            <Menu.Menu position='right'>
+              <Dropdown
+                fluid
+                item
+                trigger={this.renderUserAvatar()}
+                options={options}
+                pointing='top left'
+                icon={null}
+              />
+              <Icon name='alarm' inverted />
+            </Menu.Menu>
+          </Container>
 
-        <Container className='app-layout__container'>
+        </Menu>
+        <div className='app-layout__container'>
           {React.Children.only(this.props.children)}
-        </Container>
+        </div>
       </div>
     )
   }
