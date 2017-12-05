@@ -1,20 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Icon, Dropdown, Image, Container } from 'semantic-ui-react'
+import { Image, Menu } from 'semantic-ui-react'
 import styled from 'styled-components'
+
+import TopNavRightMenus from '../top-nav/TopNavRightMenus.jsx'
 
 class AppLayout extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
     username: PropTypes.string.isRequired,
   }
-  renderUserAvatar = () => (
-    <span className='app-layout__avatar'>
-      <Image avatar src='https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg' />
-      {this.props.username}
-    </span>
-  )
+
   render () {
     const options = [
       {
@@ -27,28 +23,12 @@ class AppLayout extends React.Component {
       { key: 'sign-out', text: 'ลงชื่อออก', icon: 'sign out' },
     ]
     return (
-      <div className={this.props.className}>
+      <div className='app-layout'>
         <Menu fixed='top' inverted className='app-layout__top-nav-fixed'>
-          <Container>
-            <Menu.Menu position='right'>
-              <Menu.Item link>
-                <Icon
-                  name='alarm'
-                  inverted
-                  className='app-layout__notification-icon'
-                />
-              </Menu.Item>
-              <Dropdown
-                item
-                trigger={this.renderUserAvatar()}
-                options={options}
-                pointing='top left'
-                icon={null}
-              />
-
-            </Menu.Menu>
-          </Container>
-
+          <TopNavRightMenus
+            options={options}
+            username={this.props.username}
+          />
         </Menu>
         <div className='app-layout__container'>
           {React.Children.only(this.props.children)}
@@ -67,13 +47,6 @@ export default styled(AppLayout)`
     &__container {
     ${''/* propably height for fixed menu on the top was defined at 45px. */}
       margin-top: 45px;
-    }
-    &__user-menu {
-      width: 200px;
-    }
-    &__notification-icon {
-      margin: 0 !important;
-      width: 14px;
     }
   }
 `
